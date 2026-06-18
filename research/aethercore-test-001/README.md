@@ -26,6 +26,14 @@ The results are mixed but informative:
 - `outputs/`: regression tables, model comparisons, audits, and summary JSON/CSV files.
 - `figures/`: generated plots.
 - `report/`: plain-English markdown reports for each test.
+- `ARTIFACT_POLICY.md`: canonical vs local-only artifact rules and review expectations.
+
+## Environment Baseline
+
+- Python baseline for the current tracked outputs: `3.13.7`
+- Dependency baseline: pinned in `requirements.txt`
+
+If you rerun this project with a different Python minor version or unpinned dependencies, treat any changed coefficients, plots, or formatting as potentially environment-driven until reviewed.
 
 ## Data Sources
 
@@ -273,6 +281,7 @@ Key result: pandemic-overlap WVS countries do not show a higher average Sphere-o
 Install dependencies:
 
 ```powershell
+python --version
 python -m pip install -r requirements.txt
 ```
 
@@ -305,6 +314,22 @@ Reasons:
 - GitHub is not the correct archival location for large raw public datasets.
 
 The tracked `data_processed/` files are country-level derived datasets suitable for review and replication checks.
+
+## Generated Artifact Policy
+
+This repository intentionally tracks selected generated artifacts because the raw source datasets are excluded and some outputs are the published research record.
+
+Tracked generated artifacts:
+
+- `data_processed/*.csv`
+- `outputs/*.csv`
+- `outputs/*.json`
+- `figures/*.png`
+- `report/*.md`
+
+Non-tracked local artifacts should include raw source downloads, local environments, caches, and exploratory exports that are not part of the published result set.
+
+See `ARTIFACT_POLICY.md` for the full review and commit policy.
 
 ## Main Scientific Cautions
 

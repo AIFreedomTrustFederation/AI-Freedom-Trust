@@ -51,6 +51,8 @@ The main empirical conclusion is deliberately cautious: the results do **not** p
 
 Large and/or license-sensitive raw datasets are intentionally excluded from git. The repo tracks processed country-level outputs, reproducible scripts, figures, regression tables, and reports.
 
+For generated-artifact scope and review rules, see [research/aethercore-test-001/ARTIFACT_POLICY.md](research/aethercore-test-001/ARTIFACT_POLICY.md).
+
 Raw source datasets should be placed locally under:
 
 ```text
@@ -83,6 +85,7 @@ From the repository root:
 
 ```powershell
 cd research\aethercore-test-001
+python --version
 python -m pip install -r requirements.txt
 python scripts\run_analysis.py
 python scripts\run_behavioral_test002.py
@@ -100,6 +103,8 @@ Outputs are written to:
 - `research/aethercore-test-001/outputs/`
 - `research/aethercore-test-001/figures/`
 - `research/aethercore-test-001/report/`
+
+The current pinned baseline was produced with Python `3.13.7` and the exact package versions listed in `research/aethercore-test-001/requirements.txt`.
 
 ## Build the PDFs
 
