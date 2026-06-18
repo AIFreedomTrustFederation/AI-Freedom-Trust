@@ -3,7 +3,7 @@
 \input{../styles/aftdoctrine.sty}
 \usepackage{amsmath}
 
-\title{AetherCore Test Series 001--007}
+\title{AetherCore Test Series 001--008}
 \author{AI Freedom Trust Federation}
 \date{June 18, 2026}
 
@@ -13,7 +13,7 @@
 \cfoot{\sffamily\small\thepage}
 
 \hypersetup{
-  pdftitle={AetherCore Test Series 001--007: Trust Density, Trust Alignment, and COVID Shock Recovery},
+  pdftitle={AetherCore Test Series 001--008: Trust Density, Trust Alignment, and COVID Shock Recovery},
   pdfsubject={An empirical white paper refining trust-density, trust-topology, and trust-alignment hypotheses using WVS, OWID, YouGov, and World Bank WGI data}
 }
 
@@ -21,7 +21,7 @@
 
 \aftTitlePage
   {AETHERCORE / EMPIRICAL TRUST SYSTEMS / COVID SHOCK RECOVERY}
-  {AetherCore Test Series 001--007}
+  {AetherCore Test Series 001--008}
   {Trust Density, Trust Alignment, and COVID Shock Recovery}
   {Scientific White Paper v1.1: Refined Hypotheses, Empirical Results, Misconceptions, Limitations, and Research Roadmap}
 
@@ -31,11 +31,11 @@
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract}
 
-This white paper reports the first empirical testing sequence for the AetherCore claim that trust functions as a coordination infrastructure during systemic shock. The analysis examines whether measurable trust variables predict COVID-19 shock response outcomes after accounting for conventional material and demographic controls. Seven empirical passes were conducted using public cross-national datasets: World Values Survey Wave 7, Our World in Data COVID-19 data, the Imperial College London/YouGov COVID-19 Behaviour Tracker, and the World Bank Worldwide Governance Indicators. The test sequence began with a broad trust-density model, then progressively refined the construct into a taxonomy distinguishing centralized institutional trust, decentralized social trust, expert/epistemic trust, information trust, trust-migration gaps, and trust-alignment measures. The seventh pass then reran the main trust-topology models using only countries whose WVS fieldwork was completed no later than 2019, creating a strict pre-shock trust baseline.
+This white paper reports the first empirical testing sequence for the AetherCore claim that trust functions as a coordination infrastructure during systemic shock. The analysis examines whether measurable trust variables predict COVID-19 shock response outcomes after accounting for conventional material and demographic controls. Eight empirical passes were conducted using public cross-national datasets: World Values Survey Wave 7, Our World in Data COVID-19 data, the Imperial College London/YouGov COVID-19 Behaviour Tracker, and the World Bank Worldwide Governance Indicators. The test sequence began with a broad trust-density model, then progressively refined the construct into a taxonomy distinguishing centralized institutional trust, decentralized social trust, expert/epistemic trust, information trust, trust-migration gaps, and trust-alignment measures. The seventh pass reran the main trust-topology models using only countries whose WVS fieldwork was completed no later than 2019, creating a strict pre-shock trust baseline. The eighth pass examined pandemic-overlap WVS countries and operationalized a trust-only \textit{Sphere of Fear} proxy based on institutional distrust, centralization gap, expert distrust, and information distrust.
 
 The results are not presented as final proof of the AetherCore Framework. The purpose is instead to determine whether core claims can be operationalized, tested, weakened, refined, or provisionally supported. The strongest result is not the simple proposition that ``trust is good.'' Rather, the evidence suggests a more specific mechanism: countries in which trust in decentralized social networks was high relative to trust in centralized institutions tended to exhibit higher COVID deaths per million, lower vaccination uptake, higher non-vaccinated share, and more government-control belief in the small behavioral sample. This relationship is captured by the \textit{centralization gap}, defined as decentralized social trust minus centralized institutional trust. The centralization-gap signal survived multiple robustness checks, including log transformations, winsorization, rank outcomes, robust regression, and leave-one-country-out analysis. It also remained associated with vaccination and non-vaccination outcomes after adding 2019 World Bank state-capacity controls and region indicators, although some mortality associations weakened under region controls.
 
-The main conclusion is therefore cautious but substantive: trust appears empirically relevant to crisis response, but its effect depends on trust topology and trust alignment. Centralized institutional trust, expert/epistemic trust, information trust, and decentralized social trust do not behave identically. The data support further investigation of a trust-migration hypothesis: when central institutions lose legitimacy, coordination may migrate into decentralized communities. That migration is not inherently harmful; it becomes risky when decentralized trust is disconnected from expert and information-integrity channels. The strict pre-shock pass strengthens the interpretation by showing that all comparable key coefficients preserved direction after excluding pandemic-overlap WVS countries, with mortality models remaining especially consistent. The refined claim is that coherent trust alignment, not total trust alone, predicts resilient shock response. This paper documents the empirical tests, results, misconceptions, limitations, and next-stage research strategy needed to move AetherCore from conceptual theory toward a cumulative research program.
+The main conclusion is therefore cautious but substantive: trust appears empirically relevant to crisis response, but its effect depends on trust topology and trust alignment. Centralized institutional trust, expert/epistemic trust, information trust, and decentralized social trust do not behave identically. The data support further investigation of a trust-migration hypothesis: when central institutions lose legitimacy, coordination may migrate into decentralized communities. That migration is not inherently harmful; it becomes risky when decentralized trust is disconnected from expert and information-integrity channels. The strict pre-shock pass strengthens the interpretation by showing that all comparable key coefficients preserved direction after excluding pandemic-overlap WVS countries, with mortality models remaining especially consistent. The post-shock Sphere-of-Fear pass produced a more nuanced result: pandemic-overlap countries did not show higher average fear-topology scores than strict pre-shock countries, but within pandemic-overlap countries, higher fear-topology and misalignment scores predicted worse mortality and vaccination outcomes. The refined claim is therefore conditional: coherent trust alignment predicts resilient shock response, while fear topology is harmful where it appears. This paper documents the empirical tests, results, misconceptions, limitations, and next-stage research strategy needed to move AetherCore from conceptual theory toward a cumulative research program.
 
 \section{Introduction}
 
@@ -58,7 +58,7 @@ In plain language, the finding is this: a society does not recover from a shock 
 This white paper has four purposes.
 
 \begin{enumerate}
-  \item To document the empirical testing sequence conducted in AetherCore Tests 001--007.
+  \item To document the empirical testing sequence conducted in AetherCore Tests 001--008.
   \item To distinguish supported signals from weak, mixed, or exploratory findings.
   \item To identify common misconceptions that could distort interpretation of the results.
   \item To define a further research strategy suitable for a publishable working paper, pre-registration, and future peer review.
@@ -119,7 +119,7 @@ During a systemic shock, populations may shift coordination from centralized ins
 
 The empirical tests therefore evaluate not only whether trust matters, but where trust is located.
 
-\subsection{Refined Hypothesis After Tests 001--006}
+\subsection{Refined Hypothesis After Tests 001--008}
 
 The original hypothesis was useful because it made AetherCore empirically testable. It asked whether higher trust density predicted better shock response. The first testing sequence suggests that this broad claim should now be refined. The updated hypothesis is not that trust, by itself, is always protective. The updated hypothesis is that \textit{coherently aligned trust} is protective.
 
@@ -268,7 +268,7 @@ All core regression models used ordinary least squares with HC3 robust standard 
   \item leave-one-country-out influence checks.
 \end{itemize}
 
-The empirical strategy was deliberately sequential. Test 001 asked whether trust density mattered at all. Test 002 introduced direct behavioral resistance indicators. Test 003 split trust into centralized, decentralized, expert, and information channels. Test 004 pressured the signal with robustness checks. Test 005 tested timing and state-capacity confounding. Test 006 evaluated mechanism models based on trust misalignment. Test 007 then removed all pandemic-overlap WVS countries to test the stricter question of whether pre-shock trust alone preserved the same signal.
+The empirical strategy was deliberately sequential. Test 001 asked whether trust density mattered at all. Test 002 introduced direct behavioral resistance indicators. Test 003 split trust into centralized, decentralized, expert, and information channels. Test 004 pressured the signal with robustness checks. Test 005 tested timing and state-capacity confounding. Test 006 evaluated mechanism models based on trust misalignment. Test 007 then removed all pandemic-overlap WVS countries to test the stricter question of whether pre-shock trust alone preserved the same signal. Test 008 examined the post-shock side of the theory by testing whether pandemic-overlap trust observations exhibited a Sphere-of-Fear topology and whether that topology predicted worse outcomes.
 
 \subsection{Updated Null and Alternative Hypotheses}
 
@@ -478,6 +478,50 @@ Region controls weakened some mortality associations. This is a real limitation.
 
 Timing interactions also mattered. The protective central-trust effect was weaker in pandemic-overlap WVS countries for deaths and acute deaths. This suggests that part of the measured trust signal may be post-shock or contaminated by pandemic experience. This does not invalidate the finding, but it does mean that stronger future tests need pre-pandemic trust data.
 
+\subsection{Test 006: Mechanism and Misalignment}
+
+Test 006 examined whether centralization-gap risk was conditioned by expert or information trust. The simple interaction terms were not consistently significant. However, two misalignment indices were strong:
+
+\[
+\text{Misaligned Migration Index} =
+\text{Centralization Gap} -
+\text{Expert/Epistemic Trust}
+\]
+
+\[
+\text{Misaligned Information Index} =
+\text{Centralization Gap} -
+\text{Information Trust}.
+\]
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected Test 006 misalignment results.}
+\begin{tabular}{llrrrr}
+\toprule
+Outcome & Predictor & Coef. & CI Low & CI High & p \\
+\midrule
+Deaths per million & Misaligned expert index & 423.898 & 154.837 & 692.958 & 0.002 \\
+Deaths per million & Misaligned information index & 557.146 & 271.453 & 842.839 & <0.001 \\
+Acute deaths & Misaligned expert index & 365.364 & 124.100 & 606.628 & 0.003 \\
+Acute deaths & Misaligned information index & 478.992 & 219.145 & 738.840 & <0.001 \\
+Recovery deaths & Misaligned expert index & 58.534 & 3.643 & 113.424 & 0.037 \\
+Recovery deaths & Misaligned information index & 78.154 & 10.370 & 145.937 & 0.024 \\
+Vaccination rate & Misaligned expert index & -8.194 & -11.557 & -4.830 & <0.001 \\
+Non-vaccinated share & Misaligned expert index & 8.194 & 4.830 & 11.557 & <0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the small behavioral sample, both misalignment indices predicted higher government-control belief. This is precisely the kind of pattern the trust-migration hypothesis predicts, though the sample is too small for strong causal inference.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\linewidth]{../../research/aethercore-test-001/figures/test006_mechanism_coefficients.png}
+  \caption{\textbf{Mechanism coefficients.} Misalignment indices produced stronger and more consistent patterns than simple interaction terms.}
+\end{figure}
+
 \subsection{Test 007: Strict Pre-Shock Trust Baseline}
 
 Test 007 directly addressed the timing objection by removing all countries whose WVS Wave 7 fieldwork occurred in 2020 or later. This produced a stricter pre-shock subset:
@@ -526,49 +570,76 @@ In plain language, Test 007 says that the main trust-topology result does not ap
   \caption{\textbf{Strict pre-shock trust baseline.} Key trust-topology coefficients retained direction when pandemic-overlap WVS countries were excluded. Confidence intervals widened because the strict pre-shock sample is smaller.}
 \end{figure}
 
-\subsection{Test 006: Mechanism and Misalignment}
+\subsection{Test 008: Post-Shock Trust Topology and the Sphere of Fear Proxy}
 
-Test 006 examined whether centralization-gap risk was conditioned by expert or information trust. The simple interaction terms were not consistently significant. However, two misalignment indices were strong:
+Test 008 turned to the post-shock side of the hypothesis. If Test 007 asks whether pre-shock trust topology predicts later outcomes, Test 008 asks whether pandemic-overlap trust observations show evidence of the AetherCore \textit{Sphere of Fear}: contraction away from central institutions and reliable knowledge channels into a more fragmented trust configuration.
 
-\[
-\text{Misaligned Migration Index} =
-\text{Centralization Gap} -
-\text{Expert/Epistemic Trust}
-\]
+The Sphere of Fear is philosophical language, but for this test it was operationalized in measurable terms. The trust-only Sphere-of-Fear proxy combined:
 
-\[
-\text{Misaligned Information Index} =
-\text{Centralization Gap} -
-\text{Information Trust}.
-\]
+\begin{itemize}
+  \item institutional distrust;
+  \item centralization gap;
+  \item expert distrust;
+  \item information distrust.
+\end{itemize}
+
+A second misalignment index combined centralization gap, expert misalignment, and information misalignment. In ordinary language, the proxy is high when people are less connected to central institutions, less connected to expert systems, less connected to information channels, and relatively more oriented toward decentralized trust pathways.
+
+The first finding was negative and important. Pandemic-overlap WVS countries did not show a higher average Sphere-of-Fear trust-topology score than strict pre-shock WVS countries. In fact, the average was lower, and the difference was not statistically significant. This means the data do not support a simple claim that all post-shock societies collapsed into a higher fear topology.
 
 \begin{table}[htbp]
 \centering
 \small
-\caption{Selected Test 006 misalignment results.}
-\begin{tabular}{llrrrr}
+\caption{Selected Test 008 pre-shock versus pandemic-overlap group differences.}
+\begin{tabular}{lrrrrr}
 \toprule
-Outcome & Predictor & Coef. & CI Low & CI High & p \\
+Variable & Pre Mean & Post Mean & Diff. & Cohen's d & Welch p \\
 \midrule
-Deaths per million & Misaligned expert index & 423.898 & 154.837 & 692.958 & 0.002 \\
-Deaths per million & Misaligned information index & 557.146 & 271.453 & 842.839 & <0.001 \\
-Acute deaths & Misaligned expert index & 365.364 & 124.100 & 606.628 & 0.003 \\
-Acute deaths & Misaligned information index & 478.992 & 219.145 & 738.840 & <0.001 \\
-Recovery deaths & Misaligned expert index & 58.534 & 3.643 & 113.424 & 0.037 \\
-Recovery deaths & Misaligned information index & 78.154 & 10.370 & 145.937 & 0.024 \\
-Vaccination rate & Misaligned expert index & -8.194 & -11.557 & -4.830 & <0.001 \\
-Non-vaccinated share & Misaligned expert index & 8.194 & 4.830 & 11.557 & <0.001 \\
+Centralization gap & 0.111 & 0.091 & -0.020 & -0.151 & 0.562 \\
+Institutional distrust & 0.570 & 0.528 & -0.042 & -0.311 & 0.228 \\
+Expert distrust & 0.409 & 0.386 & -0.024 & -0.253 & 0.308 \\
+Information distrust & 0.564 & 0.552 & -0.013 & -0.117 & 0.656 \\
+Fear topology index & 0.086 & -0.122 & -0.208 & -0.237 & 0.361 \\
+Fear misalignment index & 0.071 & -0.100 & -0.170 & -0.174 & 0.503 \\
+Vaccination rate & 72.758 & 64.106 & -8.652 & -0.449 & 0.089 \\
+Non-vaccinated share & 27.242 & 35.894 & 8.652 & 0.449 & 0.089 \\
+Deaths per million & 1786.163 & 1137.380 & -648.783 & -0.480 & 0.061 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-In the small behavioral sample, both misalignment indices predicted higher government-control belief. This is precisely the kind of pattern the trust-migration hypothesis predicts, though the sample is too small for strong causal inference.
+The second finding was stronger and more relevant to the refined hypothesis. Within the pandemic-overlap group, higher fear-topology and misalignment scores were associated with worse outcomes. Among the 27 pandemic-overlap WVS countries, the fear-topology proxy predicted higher deaths per million, higher acute deaths, lower vaccination rate, and higher non-vaccinated share. Misalignment produced a similar and in some models stronger pattern.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected Test 008 pandemic-overlap WVS results.}
+\begin{tabular}{llrrrr}
+\toprule
+Outcome & Predictor & Coef. & CI Low & CI High & p \\
+\midrule
+Deaths per million & Fear topology index & 430.409 & 83.020 & 777.798 & 0.015 \\
+Deaths per million & Fear misalignment index & 513.451 & 199.640 & 827.261 & 0.001 \\
+Deaths per million & Misalignment + controls & 363.660 & 1.587 & 725.733 & 0.049 \\
+Acute deaths & Fear topology index & 359.640 & 71.355 & 647.925 & 0.014 \\
+Acute deaths & Fear misalignment index & 412.672 & 155.789 & 669.555 & 0.002 \\
+Vaccination rate & Fear topology + controls & -8.284 & -15.546 & -1.022 & 0.025 \\
+Vaccination rate & Misalignment + controls & -9.142 & -15.555 & -2.729 & 0.005 \\
+Non-vaccinated share & Fear topology + controls & 8.284 & 1.022 & 15.546 & 0.025 \\
+Non-vaccinated share & Misalignment + controls & 9.142 & 2.729 & 15.555 & 0.005 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The behavioral layer was much smaller and should be treated as illustrative only. In the available overlap, fear-topology and misalignment were associated with higher government-control belief and higher acute mask refusal, but vaccine-refusal and health-authority-trust models were too small and inconsistent for strong inference.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.92\linewidth]{../../research/aethercore-test-001/figures/test006_mechanism_coefficients.png}
-  \caption{\textbf{Mechanism coefficients.} Misalignment indices produced stronger and more consistent patterns than simple interaction terms.}
+  \includegraphics[width=0.92\linewidth]{../../research/aethercore-test-001/figures/test008_sphere_vs_deaths.png}
+  \caption{\textbf{Sphere-of-Fear proxy and deaths per million.} Higher fear-topology scores were associated with higher deaths per million, including within pandemic-overlap WVS countries.}
 \end{figure}
+
+The scientific conclusion is therefore conditional. Test 008 does not show that the pandemic universally pushed societies into a fear state. It shows that where trust topology has the structure predicted by the Sphere-of-Fear model, outcomes look worse. In AetherCore language, the Sphere of Fear should not be treated as a universal post-shock state. It should be treated as a measurable configuration of contraction that can appear more strongly in some societies than others.
 
 \section{Scientific Interpretation}
 
@@ -584,6 +655,7 @@ The test series supports six cautious claims.
   \item \textbf{Alignment appears more informative than total trust.} Misalignment indices performed more consistently than simple interaction terms, suggesting that divergence among trust channels may be a measurable fragmentation signal.
   \item \textbf{Trust likely interacts with capacity.} State-capacity controls did not erase the main signal, but regional and timing sensitivity indicate that trust cannot be studied apart from institutional competence and context.
   \item \textbf{The pre-shock subset preserves the trust-topology direction.} When pandemic-overlap WVS countries were excluded, all comparable key coefficients retained direction. This strengthens the interpretation that the signal is not merely post-shock measurement contamination, although the reduced sample weakens precision for some vaccination models.
+  \item \textbf{Sphere-of-Fear evidence is conditional, not universal.} Pandemic-overlap WVS countries did not show higher average fear-topology scores than strict pre-shock countries. However, within pandemic-overlap countries, higher fear-topology and misalignment scores predicted worse mortality and vaccination outcomes.
 \end{enumerate}
 
 \subsection{What the Results Do Not Prove}
@@ -667,6 +739,8 @@ This is a better hypothesis because it explains both sides of the evidence. It e
 
 The strict pre-shock pass materially improves confidence in this refinement. It does not prove causation, but it reduces one major concern: that the observed trust signal was simply produced by pandemic experience before survey measurement. Once countries with pandemic-overlap WVS fieldwork were removed, the coefficient directions remained stable across every comparable key model. This is exactly the kind of result a cumulative research program needs: not final proof, but a sharper hypothesis surviving a harder test.
 
+The post-shock Sphere-of-Fear pass adds an important caution. The evidence does not support a simple claim that the pandemic universally increased fear topology across countries. Instead, fear topology appears to function as a harmful configuration within the post-shock field. Where institutional distrust, centralization gap, expert distrust, and information distrust combine, outcomes are worse. Where that configuration is absent, post-shock status alone does not imply collapse.
+
 \section{Further Research Areas}
 
 \subsection{Pre-Pandemic Trust Baselines}
@@ -738,6 +812,20 @@ Future research should examine not only shock performance, but trust repair:
   \item Does transparent admission of error improve recovery?
   \item Do decentralized communities reconnect to institutions after crisis, or remain separated?
 \end{itemize}
+
+\subsection{Sphere-of-Fear Dynamics}
+
+Future work should directly test whether shocks cause trust migration into fear topology. Test 008 could only compare different country groups and estimate conditional associations. Stronger designs should use repeated surveys or panel data to measure:
+
+\begin{itemize}
+  \item trust in central institutions before, during, and after shock;
+  \item trust in decentralized communities before, during, and after shock;
+  \item expert and information trust across the same windows;
+  \item fear/contraction beliefs such as government-control belief, threat perception, scarcity perception, and conspiratorial ideation;
+  \item whether movement into fear topology predicts later non-compliance, refusal, violence, or institutional withdrawal.
+\end{itemize}
+
+This would convert the Sphere of Fear from a symbolic model into a longitudinal empirical construct.
 
 \subsection{Trust Alignment Metrics}
 
@@ -821,7 +909,7 @@ The repository should include:
   \item raw-data download scripts;
   \item manual WVS instructions and licensing note;
   \item processed datasets;
-  \item analysis scripts for Tests 001--006;
+  \item analysis scripts for Tests 001--008;
   \item model output CSVs;
   \item figures;
   \item a reproducibility README;
@@ -849,6 +937,8 @@ A publishable paper should explicitly define what would weaken the claim:
   \item centralization gap loses direction under pre-pandemic trust data;
   \item strict pre-shock results fail to replicate in earlier WVS waves or other survey systems;
   \item trust-alignment indices fail to outperform simple trust-level variables;
+  \item post-shock fear-topology indices do not predict behavioral contraction or shock outcomes;
+  \item longitudinal data show no movement from institutional trust toward decentralized mistrust after severe shocks;
   \item effects vanish under stronger state-capacity controls;
   \item individual-level models do not reproduce the country-level pattern;
   \item misinformation/information variables explain the entire effect;

@@ -26,7 +26,7 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 
 ## AetherCore Empirical Research
 
-The empirical package currently includes seven linked tests:
+The empirical package currently includes eight linked tests:
 
 1. **Test 001: Trust Density and COVID Shock Recovery**  
    Country-level WVS Wave 7 trust variables merged with OWID COVID outcomes and controls.
@@ -42,6 +42,8 @@ The empirical package currently includes seven linked tests:
    Interaction tests for trust, expert/information alignment, state capacity, and behavioral mechanisms.
 7. **Test 007: Strict Pre-Shock Trust Baseline**  
    Re-estimates the main trust-topology models using only WVS Wave 7 countries whose fieldwork was completed no later than 2019.
+8. **Test 008: Post-Shock Trust Topology and Sphere of Fear Proxy**  
+   Tests pandemic-overlap trust observations, trust misalignment, and a measurable fear-topology proxy against mortality, vaccination, and behavioral contraction outcomes.
 
 The main empirical conclusion is deliberately cautious: the results do **not** prove AetherCore. They suggest that trust is not a simple universally positive variable. Trust topology matters. Centralized institutional and expert trust tend to behave differently from decentralized interpersonal or community trust, and trust gaps can mark vulnerability during institutional shocks.
 
@@ -73,6 +75,7 @@ Tracked processed datasets include:
 - [research/aethercore-test-001/data_processed/aethercore_test005_timing_statecapacity_merged.csv](research/aethercore-test-001/data_processed/aethercore_test005_timing_statecapacity_merged.csv)
 - [research/aethercore-test-001/data_processed/aethercore_test006_mechanism_merged.csv](research/aethercore-test-001/data_processed/aethercore_test006_mechanism_merged.csv)
 - [research/aethercore-test-001/data_processed/aethercore_test007_preshock_only.csv](research/aethercore-test-001/data_processed/aethercore_test007_preshock_only.csv)
+- [research/aethercore-test-001/data_processed/aethercore_test008_postshock_sphere.csv](research/aethercore-test-001/data_processed/aethercore_test008_postshock_sphere.csv)
 
 ## Reproduce the Empirical Tests
 
@@ -88,6 +91,7 @@ python scripts\run_robustness_test004.py
 python scripts\run_timing_statecapacity_test005.py
 python scripts\run_mechanism_test006.py
 python scripts\run_preshock_test007.py
+python scripts\run_postshock_sphere_test008.py
 ```
 
 Outputs are written to:

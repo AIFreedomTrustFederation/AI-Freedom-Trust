@@ -245,6 +245,29 @@ Main outputs:
 
 Key result: when countries with WVS fieldwork in 2020 or later are excluded, the pre-shock subset preserves the direction of all comparable key trust-topology coefficients from the all-Wave-7 sample. Mortality models remain especially consistent; vaccination models keep the expected direction but lose precision in several specifications because the strict pre-shock sample is smaller.
 
+### Test 008: Post-Shock Trust Topology and Sphere of Fear Proxy
+
+Script:
+
+```powershell
+python scripts\run_postshock_sphere_test008.py
+```
+
+Main outputs:
+
+- `data_processed/aethercore_test008_postshock_sphere.csv`
+- `outputs/test008_group_differences.csv`
+- `outputs/test008_postshock_sphere_regression_results.csv`
+- `outputs/test008_postshock_sphere_summary.json`
+- `figures/test008_centralization_gap_by_timing.png`
+- `figures/test008_sphere_proxy_by_timing.png`
+- `figures/test008_sphere_vs_deaths.png`
+- `figures/test008_misalignment_vs_deaths.png`
+- `figures/test008_misalignment_vs_nonvaccinated.png`
+- `report/aethercore_test_008_postshock_sphere.md`
+
+Key result: pandemic-overlap WVS countries do not show a higher average Sphere-of-Fear trust-topology score than strict pre-shock countries. The stronger signal is conditional: within the pandemic-overlap group, higher fear-topology and misalignment scores predict worse mortality and vaccination outcomes. This refines the hypothesis away from "all post-shock societies collapse into fear" and toward "fear topology is harmful where it appears."
+
 ## Reproduction
 
 Install dependencies:
@@ -263,6 +286,7 @@ python scripts\run_robustness_test004.py
 python scripts\run_timing_statecapacity_test005.py
 python scripts\run_mechanism_test006.py
 python scripts\run_preshock_test007.py
+python scripts\run_postshock_sphere_test008.py
 ```
 
 ## Raw Data Policy
@@ -299,3 +323,4 @@ The tracked `data_processed/` files are country-level derived datasets suitable 
 - Main report: `report/aethercore_test_001_report.md`
 - Follow-up test reports: `report/aethercore_test_002_behavioral_resistance.md` through `report/aethercore_test_006_mechanism_interactions.md`
 - Strict pre-shock report: `report/aethercore_test_007_preshock_baseline.md`
+- Post-shock Sphere of Fear report: `report/aethercore_test_008_postshock_sphere.md`
