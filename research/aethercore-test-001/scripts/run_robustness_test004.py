@@ -32,6 +32,13 @@ def standardize(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
     return out
 
 
+def safe_log1p(series: pd.Series) -> pd.Series:
+    out = pd.Series(np.nan, index=series.index, dtype=float)
+    valid = series.gt(-1) & series.notna()
+    out.loc[valid] = np.log1p(series.loc[valid])
+    return out
+
+
 def fit_ols(df: pd.DataFrame, outcome: str, predictors: list[str], model: str, transform: str) -> list[dict]:
     cols = [outcome] + predictors
     data = df[cols + ["iso_code", "location"]].dropna()
@@ -138,7 +145,7 @@ def main() -> None:
     outcomes = ["deaths_per_million", "acute_deaths_per_million", "recovery_deaths_per_million", "excess_mortality"]
     work = df.copy()
     for outcome in outcomes:
-        work[f"log1p_{outcome}"] = np.log1p(work[outcome])
+        work[f"log1p_{outcome}"] = safe_log1p(work[outcome])
         work[f"winsor_{outcome}"] = winsorize(work[outcome])
         work[f"rank_{outcome}"] = work[outcome].rank(pct=True)
 

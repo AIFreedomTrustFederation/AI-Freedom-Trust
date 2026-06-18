@@ -58,8 +58,14 @@ def main() -> None:
     if not path.exists():
         raise SystemExit("Run Test 003 first.")
     df = pd.read_csv(path)
-    df["misaligned_migration_index"] = df["centralization_gap"] - df["expert_epistemic_trust"]
-    df["misaligned_information_index"] = df["centralization_gap"] - df["information_trust"]
+    derived = pd.DataFrame(
+        {
+            "misaligned_migration_index": df["centralization_gap"] - df["expert_epistemic_trust"],
+            "misaligned_information_index": df["centralization_gap"] - df["information_trust"],
+        },
+        index=df.index,
+    )
+    df = pd.concat([df, derived], axis=1).copy()
     df = standardize(df, ["misaligned_migration_index", "misaligned_information_index"])
     df.to_csv(DATA_PROCESSED / "aethercore_test006_mechanism_merged.csv", index=False)
 
