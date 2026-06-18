@@ -225,6 +225,26 @@ Main outputs:
 - `figures/test006_mechanism_coefficients.png`
 - `report/aethercore_test_006_mechanism_interactions.md`
 
+### Test 007: Strict Pre-Shock Trust Baseline
+
+Script:
+
+```powershell
+python scripts\run_preshock_test007.py
+```
+
+Main outputs:
+
+- `data_processed/aethercore_test007_preshock_only.csv`
+- `data_processed/aethercore_test007_samples_long.csv`
+- `outputs/test007_preshock_regression_results.csv`
+- `outputs/test007_all_vs_preshock_comparison.csv`
+- `outputs/test007_preshock_summary.json`
+- `figures/test007_preshock_coefficients.png`
+- `report/aethercore_test_007_preshock_baseline.md`
+
+Key result: when countries with WVS fieldwork in 2020 or later are excluded, the pre-shock subset preserves the direction of all comparable key trust-topology coefficients from the all-Wave-7 sample. Mortality models remain especially consistent; vaccination models keep the expected direction but lose precision in several specifications because the strict pre-shock sample is smaller.
+
 ## Reproduction
 
 Install dependencies:
@@ -242,6 +262,7 @@ python scripts\run_trust_taxonomy_test003.py
 python scripts\run_robustness_test004.py
 python scripts\run_timing_statecapacity_test005.py
 python scripts\run_mechanism_test006.py
+python scripts\run_preshock_test007.py
 ```
 
 ## Raw Data Policy
@@ -277,4 +298,4 @@ The tracked `data_processed/` files are country-level derived datasets suitable 
 - LaTeX source: `../../latex/documents/aethercore-empirical-trust-density-covid.tex`
 - Main report: `report/aethercore_test_001_report.md`
 - Follow-up test reports: `report/aethercore_test_002_behavioral_resistance.md` through `report/aethercore_test_006_mechanism_interactions.md`
-
+- Strict pre-shock report: `report/aethercore_test_007_preshock_baseline.md`

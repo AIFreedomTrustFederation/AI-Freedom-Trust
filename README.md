@@ -26,7 +26,7 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 
 ## AetherCore Empirical Research
 
-The empirical package currently includes six linked tests:
+The empirical package currently includes seven linked tests:
 
 1. **Test 001: Trust Density and COVID Shock Recovery**  
    Country-level WVS Wave 7 trust variables merged with OWID COVID outcomes and controls.
@@ -40,6 +40,8 @@ The empirical package currently includes six linked tests:
    Fieldwork timing checks and World Governance Indicators state-capacity controls.
 6. **Test 006: Mechanism Interactions**  
    Interaction tests for trust, expert/information alignment, state capacity, and behavioral mechanisms.
+7. **Test 007: Strict Pre-Shock Trust Baseline**  
+   Re-estimates the main trust-topology models using only WVS Wave 7 countries whose fieldwork was completed no later than 2019.
 
 The main empirical conclusion is deliberately cautious: the results do **not** prove AetherCore. They suggest that trust is not a simple universally positive variable. Trust topology matters. Centralized institutional and expert trust tend to behave differently from decentralized interpersonal or community trust, and trust gaps can mark vulnerability during institutional shocks.
 
@@ -70,6 +72,7 @@ Tracked processed datasets include:
 - [research/aethercore-test-001/data_processed/aethercore_test003_trust_taxonomy_merged.csv](research/aethercore-test-001/data_processed/aethercore_test003_trust_taxonomy_merged.csv)
 - [research/aethercore-test-001/data_processed/aethercore_test005_timing_statecapacity_merged.csv](research/aethercore-test-001/data_processed/aethercore_test005_timing_statecapacity_merged.csv)
 - [research/aethercore-test-001/data_processed/aethercore_test006_mechanism_merged.csv](research/aethercore-test-001/data_processed/aethercore_test006_mechanism_merged.csv)
+- [research/aethercore-test-001/data_processed/aethercore_test007_preshock_only.csv](research/aethercore-test-001/data_processed/aethercore_test007_preshock_only.csv)
 
 ## Reproduce the Empirical Tests
 
@@ -84,6 +87,7 @@ python scripts\run_trust_taxonomy_test003.py
 python scripts\run_robustness_test004.py
 python scripts\run_timing_statecapacity_test005.py
 python scripts\run_mechanism_test006.py
+python scripts\run_preshock_test007.py
 ```
 
 Outputs are written to:
@@ -112,4 +116,3 @@ Final PDFs are written to `docs/pdf/`.
 ## Publication Status
 
 This is an active research repository. The empirical work should be read as exploratory, correlational, and falsifiable. The results identify patterns worth testing more deeply; they do not establish causal proof.
-

@@ -3,7 +3,7 @@
 \input{../styles/aftdoctrine.sty}
 \usepackage{amsmath}
 
-\title{AetherCore Test Series 001--006}
+\title{AetherCore Test Series 001--007}
 \author{AI Freedom Trust Federation}
 \date{June 18, 2026}
 
@@ -13,7 +13,7 @@
 \cfoot{\sffamily\small\thepage}
 
 \hypersetup{
-  pdftitle={AetherCore Test Series 001--006: Trust Density, Trust Alignment, and COVID Shock Recovery},
+  pdftitle={AetherCore Test Series 001--007: Trust Density, Trust Alignment, and COVID Shock Recovery},
   pdfsubject={An empirical white paper refining trust-density, trust-topology, and trust-alignment hypotheses using WVS, OWID, YouGov, and World Bank WGI data}
 }
 
@@ -21,7 +21,7 @@
 
 \aftTitlePage
   {AETHERCORE / EMPIRICAL TRUST SYSTEMS / COVID SHOCK RECOVERY}
-  {AetherCore Test Series 001--006}
+  {AetherCore Test Series 001--007}
   {Trust Density, Trust Alignment, and COVID Shock Recovery}
   {Scientific White Paper v1.1: Refined Hypotheses, Empirical Results, Misconceptions, Limitations, and Research Roadmap}
 
@@ -31,11 +31,11 @@
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract}
 
-This white paper reports the first empirical testing sequence for the AetherCore claim that trust functions as a coordination infrastructure during systemic shock. The analysis examines whether measurable trust variables predict COVID-19 shock response outcomes after accounting for conventional material and demographic controls. Six empirical passes were conducted using public cross-national datasets: World Values Survey Wave 7, Our World in Data COVID-19 data, the Imperial College London/YouGov COVID-19 Behaviour Tracker, and the World Bank Worldwide Governance Indicators. The test sequence began with a broad trust-density model, then progressively refined the construct into a taxonomy distinguishing centralized institutional trust, decentralized social trust, expert/epistemic trust, information trust, trust-migration gaps, and trust-alignment measures.
+This white paper reports the first empirical testing sequence for the AetherCore claim that trust functions as a coordination infrastructure during systemic shock. The analysis examines whether measurable trust variables predict COVID-19 shock response outcomes after accounting for conventional material and demographic controls. Seven empirical passes were conducted using public cross-national datasets: World Values Survey Wave 7, Our World in Data COVID-19 data, the Imperial College London/YouGov COVID-19 Behaviour Tracker, and the World Bank Worldwide Governance Indicators. The test sequence began with a broad trust-density model, then progressively refined the construct into a taxonomy distinguishing centralized institutional trust, decentralized social trust, expert/epistemic trust, information trust, trust-migration gaps, and trust-alignment measures. The seventh pass then reran the main trust-topology models using only countries whose WVS fieldwork was completed no later than 2019, creating a strict pre-shock trust baseline.
 
 The results are not presented as final proof of the AetherCore Framework. The purpose is instead to determine whether core claims can be operationalized, tested, weakened, refined, or provisionally supported. The strongest result is not the simple proposition that ``trust is good.'' Rather, the evidence suggests a more specific mechanism: countries in which trust in decentralized social networks was high relative to trust in centralized institutions tended to exhibit higher COVID deaths per million, lower vaccination uptake, higher non-vaccinated share, and more government-control belief in the small behavioral sample. This relationship is captured by the \textit{centralization gap}, defined as decentralized social trust minus centralized institutional trust. The centralization-gap signal survived multiple robustness checks, including log transformations, winsorization, rank outcomes, robust regression, and leave-one-country-out analysis. It also remained associated with vaccination and non-vaccination outcomes after adding 2019 World Bank state-capacity controls and region indicators, although some mortality associations weakened under region controls.
 
-The main conclusion is therefore cautious but substantive: trust appears empirically relevant to crisis response, but its effect depends on trust topology and trust alignment. Centralized institutional trust, expert/epistemic trust, information trust, and decentralized social trust do not behave identically. The data support further investigation of a trust-migration hypothesis: when central institutions lose legitimacy, coordination may migrate into decentralized communities. That migration is not inherently harmful; it becomes risky when decentralized trust is disconnected from expert and information-integrity channels. The refined claim is that coherent trust alignment, not total trust alone, predicts resilient shock response. This paper documents the empirical tests, results, misconceptions, limitations, and next-stage research strategy needed to move AetherCore from conceptual theory toward a cumulative research program.
+The main conclusion is therefore cautious but substantive: trust appears empirically relevant to crisis response, but its effect depends on trust topology and trust alignment. Centralized institutional trust, expert/epistemic trust, information trust, and decentralized social trust do not behave identically. The data support further investigation of a trust-migration hypothesis: when central institutions lose legitimacy, coordination may migrate into decentralized communities. That migration is not inherently harmful; it becomes risky when decentralized trust is disconnected from expert and information-integrity channels. The strict pre-shock pass strengthens the interpretation by showing that all comparable key coefficients preserved direction after excluding pandemic-overlap WVS countries, with mortality models remaining especially consistent. The refined claim is that coherent trust alignment, not total trust alone, predicts resilient shock response. This paper documents the empirical tests, results, misconceptions, limitations, and next-stage research strategy needed to move AetherCore from conceptual theory toward a cumulative research program.
 
 \section{Introduction}
 
@@ -58,7 +58,7 @@ In plain language, the finding is this: a society does not recover from a shock 
 This white paper has four purposes.
 
 \begin{enumerate}
-  \item To document the empirical testing sequence conducted in AetherCore Tests 001--006.
+  \item To document the empirical testing sequence conducted in AetherCore Tests 001--007.
   \item To distinguish supported signals from weak, mixed, or exploratory findings.
   \item To identify common misconceptions that could distort interpretation of the results.
   \item To define a further research strategy suitable for a publishable working paper, pre-registration, and future peer review.
@@ -268,7 +268,7 @@ All core regression models used ordinary least squares with HC3 robust standard 
   \item leave-one-country-out influence checks.
 \end{itemize}
 
-The empirical strategy was deliberately sequential. Test 001 asked whether trust density mattered at all. Test 002 introduced direct behavioral resistance indicators. Test 003 split trust into centralized, decentralized, expert, and information channels. Test 004 pressured the signal with robustness checks. Test 005 tested timing and state-capacity confounding. Test 006 evaluated mechanism models based on trust misalignment.
+The empirical strategy was deliberately sequential. Test 001 asked whether trust density mattered at all. Test 002 introduced direct behavioral resistance indicators. Test 003 split trust into centralized, decentralized, expert, and information channels. Test 004 pressured the signal with robustness checks. Test 005 tested timing and state-capacity confounding. Test 006 evaluated mechanism models based on trust misalignment. Test 007 then removed all pandemic-overlap WVS countries to test the stricter question of whether pre-shock trust alone preserved the same signal.
 
 \subsection{Updated Null and Alternative Hypotheses}
 
@@ -478,6 +478,54 @@ Region controls weakened some mortality associations. This is a real limitation.
 
 Timing interactions also mattered. The protective central-trust effect was weaker in pandemic-overlap WVS countries for deaths and acute deaths. This suggests that part of the measured trust signal may be post-shock or contaminated by pandemic experience. This does not invalidate the finding, but it does mean that stronger future tests need pre-pandemic trust data.
 
+\subsection{Test 007: Strict Pre-Shock Trust Baseline}
+
+Test 007 directly addressed the timing objection by removing all countries whose WVS Wave 7 fieldwork occurred in 2020 or later. This produced a stricter pre-shock subset:
+
+\begin{itemize}
+  \item all merged WVS Wave 7 countries: 65;
+  \item strict pre-shock countries with maximum WVS fieldwork year no later than 2019: 38;
+  \item pandemic-overlap countries with fieldwork in 2020 or later: 27.
+\end{itemize}
+
+The test reran the central trust, centralization gap, trust-alignment, and misalignment models using the strict pre-shock subset. This is a harder test because the usable mortality/vaccination model sample falls to 32 countries after controls. Smaller samples widen confidence intervals and reduce statistical power. Therefore, the most important comparison is not only whether p-values remain below conventional thresholds, but whether coefficient directions remain stable across all-Wave-7 and strict-pre-shock models.
+
+The result was directionally strong. Across 63 comparable key-term model pairs, the pre-shock coefficient preserved the same direction as the all-Wave-7 coefficient in 100 percent of cases.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected Test 007 all-Wave-7 versus strict-pre-shock comparisons.}
+\begin{tabular}{lllrrrr}
+\toprule
+Outcome & Predictor & Model & All Coef. & Pre Coef. & Pre p & Pre n \\
+\midrule
+Deaths per million & Central trust & Central full & -679.612 & -910.507 & 0.001 & 32 \\
+Deaths per million & Central trust & Central + state & -670.512 & -898.984 & 0.002 & 32 \\
+Deaths per million & Centralization gap & Gap full & 465.330 & 601.722 & 0.018 & 32 \\
+Deaths per million & Centralization gap & Gap + state & 465.318 & 585.726 & 0.025 & 32 \\
+Deaths per million & Misaligned expert index & State model & 409.363 & 580.359 & 0.032 & 32 \\
+Deaths per million & Misaligned information index & State model & 546.378 & 689.792 & 0.015 & 32 \\
+Acute deaths & Central trust & Central full & -610.875 & -818.213 & 0.003 & 32 \\
+Acute deaths & Centralization gap & Gap full & 401.650 & 502.975 & 0.029 & 32 \\
+Vaccination rate & Misaligned expert index & State model & -8.102 & -7.496 & 0.019 & 32 \\
+Non-vaccinated share & Misaligned expert index & State model & 8.102 & 7.496 & 0.019 & 32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The strict pre-shock results strengthen the mortality interpretation. Centralized institutional trust remained negatively associated with deaths per million and acute deaths. Centralization gap remained positively associated with deaths per million and acute deaths. Misaligned expert and information indices also remained associated with worse mortality outcomes.
+
+The vaccination results became more mixed under strict pre-shock filtering. Direction remained consistent: centralization gap and misalignment predicted lower vaccination and higher non-vaccinated share. However, several vaccination coefficients lost conventional significance in the smaller sample. The clearest remaining vaccination signal was the misaligned expert index, which predicted lower vaccination rate and higher non-vaccinated share in the strict pre-shock subset.
+
+In plain language, Test 007 says that the main trust-topology result does not appear to be merely an artifact of measuring trust during the pandemic. When the analysis keeps only countries whose trust data predates COVID, the direction of the story remains the same. The evidence is strongest for mortality and weaker, though still directionally consistent, for vaccination uptake.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\linewidth]{../../research/aethercore-test-001/figures/test007_preshock_coefficients.png}
+  \caption{\textbf{Strict pre-shock trust baseline.} Key trust-topology coefficients retained direction when pandemic-overlap WVS countries were excluded. Confidence intervals widened because the strict pre-shock sample is smaller.}
+\end{figure}
+
 \subsection{Test 006: Mechanism and Misalignment}
 
 Test 006 examined whether centralization-gap risk was conditioned by expert or information trust. The simple interaction terms were not consistently significant. However, two misalignment indices were strong:
@@ -535,6 +583,7 @@ The test series supports six cautious claims.
   \item \textbf{Centralization gap appears risky.} Countries where decentralized social trust exceeded centralized institutional trust tended to show higher deaths, lower vaccination uptake, higher non-vaccinated share, and higher government-control belief in exploratory behavioral models.
   \item \textbf{Alignment appears more informative than total trust.} Misalignment indices performed more consistently than simple interaction terms, suggesting that divergence among trust channels may be a measurable fragmentation signal.
   \item \textbf{Trust likely interacts with capacity.} State-capacity controls did not erase the main signal, but regional and timing sensitivity indicate that trust cannot be studied apart from institutional competence and context.
+  \item \textbf{The pre-shock subset preserves the trust-topology direction.} When pandemic-overlap WVS countries were excluded, all comparable key coefficients retained direction. This strengthens the interpretation that the signal is not merely post-shock measurement contamination, although the reduced sample weakens precision for some vaccination models.
 \end{enumerate}
 
 \subsection{What the Results Do Not Prove}
@@ -543,6 +592,7 @@ The results do not prove that distrust in centralized institutions caused COVID 
 
 \begin{itemize}
   \item high death rates may reduce trust rather than the reverse;
+  \item even pre-shock trust may proxy deeper historical, regional, institutional, or media-system differences;
   \item trust may proxy institutional competence;
   \item unobserved political, regional, cultural, or media-system variables may drive both trust and outcomes;
   \item survey timing may contaminate trust measures;
@@ -615,11 +665,13 @@ The refined AetherCore hypothesis should therefore be carried forward as a trust
 
 This is a better hypothesis because it explains both sides of the evidence. It explains why institutional and expert trust were often protective. It also explains why decentralized trust was not automatically protective. The issue is not that communities are dangerous. The issue is that communities can become isolated from reliable knowledge when institutions lose legitimacy. A coherent civilization does not force people to choose between community and institution. It builds trustworthy bridges between them.
 
+The strict pre-shock pass materially improves confidence in this refinement. It does not prove causation, but it reduces one major concern: that the observed trust signal was simply produced by pandemic experience before survey measurement. Once countries with pandemic-overlap WVS fieldwork were removed, the coefficient directions remained stable across every comparable key model. This is exactly the kind of result a cumulative research program needs: not final proof, but a sharper hypothesis surviving a harder test.
+
 \section{Further Research Areas}
 
 \subsection{Pre-Pandemic Trust Baselines}
 
-Future tests should replicate the analysis using trust measures collected strictly before COVID-19. Earlier WVS waves, European Social Survey, Latinobarometro, Afrobarometer, Asian Barometer, Gallup World Poll, and country-specific longitudinal surveys may provide stronger temporal ordering.
+Test 007 created a strict pre-shock subset within WVS Wave 7. Future tests should go further by using trust measures collected strictly before COVID-19 across broader samples. Earlier WVS waves, European Social Survey, Latinobarometro, Afrobarometer, Asian Barometer, Gallup World Poll, and country-specific longitudinal surveys may provide stronger temporal ordering and larger pre-shock country coverage.
 
 \subsection{Individual-Level Multilevel Modeling}
 
@@ -795,6 +847,7 @@ A publishable paper should explicitly define what would weaken the claim:
 
 \begin{itemize}
   \item centralization gap loses direction under pre-pandemic trust data;
+  \item strict pre-shock results fail to replicate in earlier WVS waves or other survey systems;
   \item trust-alignment indices fail to outperform simple trust-level variables;
   \item effects vanish under stronger state-capacity controls;
   \item individual-level models do not reproduce the country-level pattern;
