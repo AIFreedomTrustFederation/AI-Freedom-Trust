@@ -1,0 +1,35 @@
+{
+  "wvs_file": "C:\\Users\\aifre\\OneDrive\\Documents\\CCP\\AI-Freedom-Trust\\research\\aethercore-test-001\\data_raw\\WVS_Cross-National_Wave_7_csv_v6_0.csv",
+  "iso_column": "B_COUNTRY_ALPHA",
+  "country_column": "B_COUNTRY",
+  "constructs": {
+    "centralized_institutional_trust": {
+      "Q69": "police",
+      "Q70": "courts",
+      "Q71": "government",
+      "Q72": "political_parties",
+      "Q73": "parliament",
+      "Q74": "civil_service",
+      "Q76": "elections"
+    },
+    "expert_epistemic_trust": {
+      "Q75": "universities",
+      "Q158": "science_item_1",
+      "Q159": "science_item_2"
+    },
+    "information_trust": {
+      "Q66": "press",
+      "Q67": "television"
+    },
+    "bonding_social_trust": {
+      "Q58": "family",
+      "Q59": "neighborhood",
+      "Q60": "people_known_personally"
+    },
+    "bridging_social_trust": {
+      "Q61": "people_met_first_time",
+      "Q62": "people_another_religion",
+      "Q63": "people_another_nationality"
+    }
+  }
+}

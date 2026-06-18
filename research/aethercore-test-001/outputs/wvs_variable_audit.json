@@ -1,0 +1,32 @@
+{
+  "iso_column": "B_COUNTRY_ALPHA",
+  "country_column": "B_COUNTRY",
+  "generalized_trust_column": "Q57",
+  "institution_columns": [
+    "Q69",
+    "Q70",
+    "Q71",
+    "Q73",
+    "Q74",
+    "Q76"
+  ],
+  "expert_columns": [
+    "Q75",
+    "Q158",
+    "Q159"
+  ],
+  "information_integrity_proxy_columns": [
+    "Q66",
+    "Q67"
+  ],
+  "trust_composite_parts": [
+    "trust_generalized",
+    "trust_institutions",
+    "trust_experts"
+  ],
+  "notes": [
+    "Generalized trust recoded as 1='most people can be trusted', 0='need to be careful'.",
+    "Institution/expert/media confidence items recoded from 1..4 to 1.0..0.0 where lower WVS values mean higher confidence.",
+    "Q75 is treated as an expert-adjacent universities confidence proxy if present; this is weaker than direct trust in doctors/scientists."
+  ]
+}

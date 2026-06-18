@@ -1,0 +1,651 @@
+\documentclass[12pt]{article}
+
+\input{../styles/aftdoctrine.sty}
+\usepackage{amsmath}
+
+\title{AetherCore Test Series 001--006}
+\author{AI Freedom Trust Federation}
+\date{June 18, 2026}
+
+\fancyhf{}
+\lhead{\sffamily\small AI Freedom Trust Federation}
+\rhead{\sffamily\small AetherCore Empirical Series}
+\cfoot{\sffamily\small\thepage}
+
+\hypersetup{
+  pdftitle={AetherCore Test Series 001--006: Trust Density, Trust Migration, and COVID Shock Recovery},
+  pdfsubject={An empirical white paper testing trust-density and trust-migration hypotheses using WVS, OWID, YouGov, and World Bank WGI data}
+}
+
+\begin{document}
+
+\aftTitlePage
+  {AETHERCORE / EMPIRICAL TRUST SYSTEMS / COVID SHOCK RECOVERY}
+  {AetherCore Test Series 001--006}
+  {Trust Density, Trust Migration, and COVID Shock Recovery}
+  {Scientific White Paper v1.0: Empirical Results, Misconceptions, Limitations, and Research Roadmap}
+
+\tableofcontents
+\newpage
+
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+This white paper reports the first empirical testing sequence for the AetherCore claim that trust functions as a coordination infrastructure during systemic shock. The analysis examines whether measurable trust variables predict COVID-19 shock response outcomes after accounting for conventional material and demographic controls. Six empirical passes were conducted using public cross-national datasets: World Values Survey Wave 7, Our World in Data COVID-19 data, the Imperial College London/YouGov COVID-19 Behaviour Tracker, and the World Bank Worldwide Governance Indicators. The test sequence began with a broad trust-density model, then progressively refined the construct into a taxonomy distinguishing centralized institutional trust, decentralized social trust, expert/epistemic trust, information trust, and trust-migration gaps.
+
+The results are not presented as final proof of the AetherCore Framework. The purpose is instead to determine whether core claims can be operationalized, tested, weakened, refined, or provisionally supported. The strongest result is not the simple proposition that ``trust is good.'' Rather, the evidence suggests a more specific mechanism: countries in which trust in decentralized social networks was high relative to trust in centralized institutions tended to exhibit higher COVID deaths per million, lower vaccination uptake, higher non-vaccinated share, and more government-control belief in the small behavioral sample. This relationship is captured by the \textit{centralization gap}, defined as decentralized social trust minus centralized institutional trust. The centralization-gap signal survived multiple robustness checks, including log transformations, winsorization, rank outcomes, robust regression, and leave-one-country-out analysis. It also remained associated with vaccination and non-vaccination outcomes after adding 2019 World Bank state-capacity controls and region indicators, although some mortality associations weakened under region controls.
+
+The main conclusion is therefore cautious but substantive: trust appears empirically relevant to crisis response, but its effect depends on trust topology. Centralized institutional trust, expert/epistemic trust, information trust, and decentralized social trust do not behave identically. The data support further investigation of a trust-migration hypothesis: when central institutions lose legitimacy, coordination may migrate into decentralized communities. That migration is not inherently harmful; it becomes risky when decentralized trust is disconnected from expert and information-integrity channels. This paper documents the empirical tests, results, misconceptions, limitations, and next-stage research strategy needed to move AetherCore from conceptual theory toward a cumulative research program.
+
+\section{Introduction}
+
+The AetherCore Framework proposes that trust is not merely a moral virtue, interpersonal preference, or cultural ornament. It is a form of infrastructure. In complex societies, trust lowers coordination costs, permits action under uncertainty, reduces verification burdens, enables collective response, and allows institutions to function without constant coercion. During systemic shocks, trust may therefore behave as a coordination multiplier. This claim is theoretically attractive, but it must be tested empirically if it is to become more than philosophical language.
+
+The COVID-19 pandemic provides a natural first domain for testing this claim. The pandemic was not only a biomedical event. It was also a coordination shock. Societies had to process uncertain information, evaluate expert guidance, decide whether to comply with emergency policies, accept or reject vaccination, manage misinformation, and coordinate behavior across households, communities, institutions, and states. Material capacity mattered: wealth, healthcare infrastructure, age structure, and state capacity clearly shaped outcomes. Yet the pandemic also revealed that material capacity alone could not fully explain differences in vaccination uptake, excess mortality, policy compliance, and public resistance.
+
+This paper asks whether trust variables improved prediction of COVID shock response outcomes after accounting for conventional explanatory variables. The initial research question was:
+
+\begin{quote}
+Do measurable trust variables independently predict better COVID shock response after controlling for conventional factors such as GDP per capita, human development, age structure, population density, healthcare capacity, and policy stringency?
+\end{quote}
+
+The first answer was: yes, in several models, but the answer is not simple. Trust density predicted higher vaccination uptake and lower deaths per million. However, once behavioral resistance and trust taxonomy were examined more carefully, the stronger result became a distinction between trust in centralized institutions and trust in decentralized social networks. The pattern suggests that distrust in centralized institutions may be associated with worse mortality and lower vaccination, especially where trust migrates into decentralized social networks without sufficient expert or information alignment.
+
+\subsection{Purpose of This Paper}
+
+This white paper has four purposes.
+
+\begin{enumerate}
+  \item To document the empirical testing sequence conducted in AetherCore Tests 001--006.
+  \item To distinguish supported signals from weak, mixed, or exploratory findings.
+  \item To identify common misconceptions that could distort interpretation of the results.
+  \item To define a further research strategy suitable for a publishable working paper, pre-registration, and future peer review.
+\end{enumerate}
+
+This is not a final causal claim. It is an empirical foundation. The results should be read as disciplined evidence that guides the next testing cycle.
+
+\section{Core Theoretical Claims}
+
+\subsection{Trust Density}
+
+The original AetherCore empirical hypothesis defined \textit{trust density} as the degree to which participants in a social system can coordinate effectively without excessive coercion, surveillance, enforcement, or verification. In the first operationalization, trust density combined:
+
+\begin{itemize}
+  \item generalized interpersonal trust;
+  \item institutional trust;
+  \item expert-adjacent trust, where available.
+\end{itemize}
+
+The initial prediction was straightforward:
+
+\begin{quote}
+Higher trust density should predict better shock response, including higher vaccination uptake and lower mortality, after material controls.
+\end{quote}
+
+This prediction was partially supported, especially in Tests 001 and 002. However, later tests showed that a single composite hides important differences between trust channels.
+
+\subsection{Trust Taxonomy}
+
+Test 003 refined trust density into a taxonomy:
+
+\begin{itemize}
+  \item \textbf{Centralized institutional trust}: confidence in police, courts, government, political parties, parliament, civil service, and elections.
+  \item \textbf{Expert/epistemic trust}: confidence in universities and available science-oriented World Values Survey items.
+  \item \textbf{Information trust}: confidence in press and television.
+  \item \textbf{Bonding social trust}: trust in family, neighborhood, and people known personally.
+  \item \textbf{Bridging social trust}: trust in people met for the first time, people of another religion, and people of another nationality.
+  \item \textbf{Decentralized social trust}: average of bonding and bridging social trust.
+\end{itemize}
+
+The most important derived measure was:
+
+\[
+\text{Centralization Gap} =
+\text{Decentralized Social Trust} -
+\text{Centralized Institutional Trust}.
+\]
+
+The centralization gap is not a measure of distrust alone. It measures trust topology: the degree to which social trust is stronger outside central institutions than inside them.
+
+\subsection{Trust Migration Hypothesis}
+
+The refined hypothesis is:
+
+\begin{quote}
+During a systemic shock, populations may shift coordination from centralized institutions toward decentralized social networks. This migration may be adaptive when decentralized networks remain connected to expert knowledge and reliable information. It may become risky when decentralized trust is combined with weak centralized trust, weak expert trust, and weak information trust.
+\end{quote}
+
+The empirical tests therefore evaluate not only whether trust matters, but where trust is located.
+
+\section{Data Sources}
+
+The project used four public data sources.
+
+\begin{enumerate}
+  \item \textbf{World Values Survey Wave 7}. Source page: \url{https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp}. The analysis used country-level aggregates of individual trust responses. A public OSF mirror of the official Wave 7 CSV was used when available: \url{https://osf.io/36dgb/download}.
+  \item \textbf{Our World in Data COVID-19 dataset}. Primary source: \url{https://covid.ourworldindata.org/data/owid-covid-data.csv}. GitHub fallback: \url{https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv}.
+  \item \textbf{Imperial College London/YouGov COVID-19 Behaviour Tracker}. Source repository: \url{https://github.com/YouGov-Data/covid-19-tracker}. This source provided respondent-level behavioral indicators for masking, vaccine intention, health-authority vaccine trust, and government-control belief.
+  \item \textbf{World Bank Worldwide Governance Indicators}. Source page: \url{https://www.worldbank.org/en/publication/worldwide-governance-indicators}. Bulk CSV: \url{https://databank.worldbank.org/data/download/WGI_CSV.zip}. The analysis used 2019 governance estimates as pre-pandemic state-capacity controls.
+\end{enumerate}
+
+\section{Variables and Operationalization}
+
+\subsection{Outcome Variables}
+
+The main country-level outcomes were:
+
+\begin{itemize}
+  \item \texttt{vaccination\_rate}: maximum OWID people vaccinated per hundred.
+  \item \texttt{vaccination\_rate\_2021}: maximum people vaccinated per hundred through December 31, 2021.
+  \item \texttt{non\_vaccinated\_share}: 100 minus final vaccination rate.
+  \item \texttt{excess\_mortality}: latest OWID cumulative excess mortality per million where available.
+  \item \texttt{deaths\_per\_million}: maximum OWID total COVID deaths per million.
+  \item \texttt{acute\_deaths\_per\_million}: maximum deaths per million through December 31, 2021.
+  \item \texttt{recovery\_deaths\_per\_million}: final deaths per million minus acute deaths per million.
+\end{itemize}
+
+The behavioral outcomes from YouGov included:
+
+\begin{itemize}
+  \item \texttt{vaccine\_refusal}: disagreement with vaccine-intent items.
+  \item \texttt{vaccine\_intent}: agreement with vaccine-intent items.
+  \item \texttt{mask\_refusal\_outside}: reporting rarely or never wearing a mask outside the home.
+  \item \texttt{mask\_compliance\_outside}: frequency-scaled mask wearing outside the home.
+  \item \texttt{health\_authority\_vaccine\_trust}: belief that government health authorities would provide an effective COVID vaccine.
+  \item \texttt{government\_control\_belief}: agreement that COVID was being exploited by government to control people.
+\end{itemize}
+
+\subsection{Control Variables}
+
+The baseline controls were:
+
+\begin{itemize}
+  \item log GDP per capita;
+  \item Human Development Index;
+  \item median age;
+  \item log population density;
+  \item hospital beds per thousand;
+  \item mean 2020--2021 government stringency index.
+\end{itemize}
+
+Test 005 added 2019 World Bank WGI state-capacity indicators:
+
+\begin{itemize}
+  \item government effectiveness;
+  \item rule of law;
+  \item control of corruption;
+  \item voice and accountability;
+  \item composite state-capacity index.
+\end{itemize}
+
+\subsection{Important Measurement Warning}
+
+The term \textit{anti-vaxxer} is not directly measured in the OWID country-level data. In Test 001 and Test 002, \texttt{non\_vaccinated\_share} is only an uptake-gap proxy. The YouGov behavioral data provides a better vaccine-refusal proxy through vaccine-intention items, but the country overlap with WVS is small. Similarly, no-mask behavior is proxied through mask-wearing survey items, not through identity labels. The analysis therefore avoids labeling populations as anti-vaxxers or no-maskers unless direct behavioral survey items are used.
+
+\section{Modeling Strategy}
+
+All core regression models used ordinary least squares with HC3 robust standard errors. Predictors were standardized to make coefficients comparable across trust measures. Outcomes remained in their original units except in robustness checks. Test 004 added:
+
+\begin{itemize}
+  \item log-transformed mortality outcomes;
+  \item winsorized mortality outcomes;
+  \item rank-percentile mortality outcomes;
+  \item Huber robust regression;
+  \item leave-one-country-out influence checks.
+\end{itemize}
+
+The empirical strategy was deliberately sequential. Test 001 asked whether trust density mattered at all. Test 002 introduced direct behavioral resistance indicators. Test 003 split trust into centralized, decentralized, expert, and information channels. Test 004 pressured the signal with robustness checks. Test 005 tested timing and state-capacity confounding. Test 006 evaluated mechanism models based on trust misalignment.
+
+\section{Results}
+
+\subsection{Test 001: Trust Density and COVID Shock Recovery}
+
+Test 001 found that trust variables improved prediction of broad COVID outcomes. The trust-density composite predicted higher vaccination uptake and lower deaths per million after baseline controls. Generalized trust alone was weaker, while institutional trust and expert-adjacent trust were more informative.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected Test 001/002 trust-density results. Coefficients use standardized predictors and original outcome units.}
+\begin{tabular}{llrrrr}
+\toprule
+Outcome & Predictor & Coef. & CI Low & CI High & p \\
+\midrule
+Vaccination rate & Trust density & 5.921 & 1.696 & 10.146 & 0.006 \\
+Non-vaccinated share & Trust density & -5.921 & -10.146 & -1.696 & 0.006 \\
+Deaths per million & Trust density & -662.551 & -1005.377 & -319.726 & <0.001 \\
+Acute deaths per million & Trust density & -584.967 & -915.667 & -254.268 & <0.001 \\
+Recovery deaths per million & Trust density & -77.584 & -147.424 & -7.744 & 0.029 \\
+Vaccination rate & Expert proxy trust & 8.572 & 5.173 & 11.972 & <0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The initial interpretation was that trust density had measurable predictive value. However, the results also suggested that the type of trust mattered. Expert-adjacent trust was particularly strong for vaccination uptake, while institutional trust was more closely associated with mortality outcomes.
+
+\subsection{Test 002: Behavioral Resistance}
+
+Test 002 used the YouGov respondent-level behavioral tracker to construct country-level proxies for vaccine refusal, mask refusal, health-authority vaccine trust, and government-control belief. This test changed the interpretation. The behavioral results were not a clean story of ``more trust, more compliance.'' Instead, they showed that different trust channels behave differently.
+
+The strongest behavioral signals were:
+
+\begin{itemize}
+  \item information trust was associated with lower acute mask refusal in bivariate models and marginally after compact controls;
+  \item expert proxy trust predicted higher trust that government health authorities would provide an effective vaccine in the small vaccine-rollout sample;
+  \item institutional trust predicted lower belief that government exploited COVID for control in the small behavioral sample;
+  \item generalized trust behaved inconsistently, indicating that trust cannot be treated as a single undifferentiated variable.
+\end{itemize}
+
+This result motivated Test 003, which separated centralized trust from decentralized social trust.
+
+\subsection{Test 003: Centralized Trust, Decentralized Trust, and the Centralization Gap}
+
+Test 003 produced the most important result of the series. Centralized institutional trust was protective. The centralization gap was risky. In other words, countries where decentralized social trust exceeded centralized institutional trust tended to show worse outcomes.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected Test 003 mortality and vaccination results.}
+\begin{tabular}{llrrrr}
+\toprule
+Outcome & Predictor & Coef. & CI Low & CI High & p \\
+\midrule
+Deaths per million & Centralized institutional trust & -679.612 & -1025.524 & -333.700 & <0.001 \\
+Deaths per million & Centralization gap & 465.330 & 211.679 & 718.980 & <0.001 \\
+Acute deaths per million & Centralized institutional trust & -610.875 & -946.229 & -275.522 & <0.001 \\
+Acute deaths per million & Centralization gap & 401.650 & 180.502 & 622.797 & <0.001 \\
+Recovery deaths per million & Centralized institutional trust & -68.737 & -124.746 & -12.727 & 0.016 \\
+Recovery deaths per million & Centralization gap & 63.680 & 1.392 & 125.968 & 0.045 \\
+Vaccination rate & Centralization gap & -7.341 & -11.217 & -3.466 & <0.001 \\
+Non-vaccinated share & Centralization gap & 7.341 & 3.466 & 11.217 & <0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the small behavioral sample, government-control belief also aligned with the migration hypothesis.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected Test 003 behavioral results. Vaccine/conspiracy models are exploratory due to small sample size.}
+\begin{tabular}{llrrrrr}
+\toprule
+Outcome & Predictor & Coef. & CI Low & CI High & p & n \\
+\midrule
+Government-control belief & Centralized trust & -0.158 & -0.293 & -0.024 & 0.021 & 9 \\
+Government-control belief & Decentralized social trust & 0.098 & 0.059 & 0.137 & <0.001 & 9 \\
+Government-control belief & Centralization gap & 0.124 & 0.063 & 0.185 & <0.001 & 9 \\
+Mask refusal, acute 2020 & Decentralized social trust & 0.108 & 0.042 & 0.174 & 0.001 & 19 \\
+Mask compliance, acute 2020 & Decentralized social trust & -0.115 & -0.186 & -0.044 & 0.002 & 19 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The emerging interpretation is not that decentralized trust is inherently bad. Decentralized trust can be adaptive, solidaristic, and resilient. The risk appears when decentralized trust is high relative to central institutions and is not sufficiently aligned with expert and information-integrity systems.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\linewidth]{../../research/aethercore-test-001/figures/test003_gap_vs_deaths.png}
+  \caption{\textbf{Centralization gap and deaths per million.} Higher decentralized social trust relative to centralized institutional trust was associated with higher COVID deaths per million in Test 003.}
+\end{figure}
+
+\subsection{Test 004: Robustness and Influence Checks}
+
+Test 004 pressured the central signal. The central institutional trust and centralization-gap results survived raw, log, winsorized, rank, and robust-regression specifications.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Test 004 robustness for deaths per million.}
+\begin{tabular}{llrrrr}
+\toprule
+Transform & Predictor & Coef. & CI Low & CI High & p \\
+\midrule
+Raw & Central trust & -679.612 & -1025.524 & -333.700 & <0.001 \\
+Raw & Centralization gap & 465.330 & 211.679 & 718.980 & <0.001 \\
+Log & Central trust & -0.615 & -0.913 & -0.318 & <0.001 \\
+Log & Centralization gap & 0.511 & 0.176 & 0.846 & 0.003 \\
+Winsorized & Central trust & -583.704 & -818.687 & -348.720 & <0.001 \\
+Winsorized & Centralization gap & 433.548 & 200.281 & 666.815 & <0.001 \\
+Rank percentile & Central trust & -0.132 & -0.187 & -0.078 & <0.001 \\
+Rank percentile & Centralization gap & 0.103 & 0.044 & 0.161 & <0.001 \\
+Huber robust & Central trust & -614.050 & -879.888 & -348.212 & <0.001 \\
+Huber robust & Centralization gap & 432.389 & 134.626 & 730.151 & 0.004 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Leave-one-country-out checks showed zero sign flips for the central trust and centralization-gap coefficients across deaths per million, acute deaths, and recovery deaths. This is an important result. It indicates that the main finding is not obviously driven by a single influential country.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\linewidth]{../../research/aethercore-test-001/figures/test004_robustness_coefficients.png}
+  \caption{\textbf{Robustness coefficients.} Central trust and centralization-gap coefficients remained directionally stable across multiple outcome transformations and robust regression.}
+\end{figure}
+
+\subsection{Test 005: Timing and State Capacity}
+
+Test 005 addressed two major objections.
+
+First, World Values Survey Wave 7 overlaps the COVID period in some countries. If trust was measured after pandemic outcomes had already occurred, reverse causality becomes more plausible. The WVS timing check found 38 countries with pre-COVID fieldwork and 28 with pandemic-overlap fieldwork.
+
+Second, central institutional trust may simply proxy state capacity. If people trust central institutions because those institutions are competent, then the trust coefficient may partly reflect government effectiveness, rule of law, and corruption control. Test 005 therefore added 2019 World Bank WGI state-capacity controls.
+
+Adding state-capacity controls did not erase the main signal.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected Test 005 results with 2019 WGI state-capacity controls.}
+\begin{tabular}{llrrrr}
+\toprule
+Outcome & Predictor & Coef. & CI Low & CI High & p \\
+\midrule
+Deaths per million & Central trust & -670.512 & -1014.681 & -326.343 & <0.001 \\
+Deaths per million & Centralization gap & 465.318 & 202.706 & 727.930 & 0.001 \\
+Acute deaths & Central trust & -592.864 & -922.869 & -262.860 & <0.001 \\
+Acute deaths & Centralization gap & 401.637 & 170.815 & 632.458 & 0.001 \\
+Recovery deaths & Central trust & -77.648 & -132.229 & -23.066 & 0.005 \\
+Recovery deaths & Centralization gap & 63.682 & 0.463 & 126.900 & 0.048 \\
+Vaccination rate & Centralization gap & -7.341 & -11.162 & -3.520 & <0.001 \\
+Non-vaccinated share & Centralization gap & 7.341 & 3.520 & 11.162 & <0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Region controls weakened some mortality associations. This is a real limitation. However, vaccination and non-vaccination effects remained clearer under region controls. The paper should therefore avoid overstating a universal mortality law and instead describe a robust but confounded cross-national signal.
+
+Timing interactions also mattered. The protective central-trust effect was weaker in pandemic-overlap WVS countries for deaths and acute deaths. This suggests that part of the measured trust signal may be post-shock or contaminated by pandemic experience. This does not invalidate the finding, but it does mean that stronger future tests need pre-pandemic trust data.
+
+\subsection{Test 006: Mechanism and Misalignment}
+
+Test 006 examined whether centralization-gap risk was conditioned by expert or information trust. The simple interaction terms were not consistently significant. However, two misalignment indices were strong:
+
+\[
+\text{Misaligned Migration Index} =
+\text{Centralization Gap} -
+\text{Expert/Epistemic Trust}
+\]
+
+\[
+\text{Misaligned Information Index} =
+\text{Centralization Gap} -
+\text{Information Trust}.
+\]
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Selected Test 006 misalignment results.}
+\begin{tabular}{llrrrr}
+\toprule
+Outcome & Predictor & Coef. & CI Low & CI High & p \\
+\midrule
+Deaths per million & Misaligned expert index & 423.898 & 154.837 & 692.958 & 0.002 \\
+Deaths per million & Misaligned information index & 557.146 & 271.453 & 842.839 & <0.001 \\
+Acute deaths & Misaligned expert index & 365.364 & 124.100 & 606.628 & 0.003 \\
+Acute deaths & Misaligned information index & 478.992 & 219.145 & 738.840 & <0.001 \\
+Recovery deaths & Misaligned expert index & 58.534 & 3.643 & 113.424 & 0.037 \\
+Recovery deaths & Misaligned information index & 78.154 & 10.370 & 145.937 & 0.024 \\
+Vaccination rate & Misaligned expert index & -8.194 & -11.557 & -4.830 & <0.001 \\
+Non-vaccinated share & Misaligned expert index & 8.194 & 4.830 & 11.557 & <0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the small behavioral sample, both misalignment indices predicted higher government-control belief. This is precisely the kind of pattern the trust-migration hypothesis predicts, though the sample is too small for strong causal inference.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.92\linewidth]{../../research/aethercore-test-001/figures/test006_mechanism_coefficients.png}
+  \caption{\textbf{Mechanism coefficients.} Misalignment indices produced stronger and more consistent patterns than simple interaction terms.}
+\end{figure}
+
+\section{Scientific Interpretation}
+
+\subsection{What the Results Support}
+
+The test series supports four cautious claims.
+
+\begin{enumerate}
+  \item \textbf{Trust variables have measurable predictive value.} Trust-density and trust-taxonomy variables improved prediction of several COVID shock outcomes after conventional controls.
+  \item \textbf{The location of trust matters.} Centralized institutional trust, expert trust, information trust, and decentralized social trust are not interchangeable.
+  \item \textbf{Centralized institutional trust appears protective.} Countries with higher centralized institutional trust tended to show lower deaths per million, lower acute deaths, lower recovery deaths, and lower excess mortality.
+  \item \textbf{Centralization gap appears risky.} Countries where decentralized social trust exceeded centralized institutional trust tended to show higher deaths, lower vaccination uptake, higher non-vaccinated share, and higher government-control belief in exploratory behavioral models.
+\end{enumerate}
+
+\subsection{What the Results Do Not Prove}
+
+The results do not prove that distrust in centralized institutions caused COVID deaths. They also do not prove that decentralized communities are harmful. Several alternative explanations remain plausible:
+
+\begin{itemize}
+  \item high death rates may reduce trust rather than the reverse;
+  \item trust may proxy institutional competence;
+  \item unobserved political, regional, cultural, or media-system variables may drive both trust and outcomes;
+  \item survey timing may contaminate trust measures;
+  \item ecological country-level relationships may not hold at the individual level.
+\end{itemize}
+
+The strongest warranted conclusion is not causal proof, but research-grade signal.
+
+\section{Misconceptions to Avoid}
+
+\subsection{Misconception 1: The Goal Is Final Proof}
+
+Final proof is not the goal. Scientific progress occurs through progressively better tests, not through one decisive result. The correct goal is to make AetherCore claims measurable, falsifiable, comparable, and refinable.
+
+\subsection{Misconception 2: All Trust Is Good}
+
+The results do not support a simple ``trust good, distrust bad'' interpretation. Trust can coordinate accurate action or inaccurate action. A community can trust reliable experts, or it can trust misinformation networks. Trust is a coordination amplifier; what it amplifies depends on the epistemic environment.
+
+\subsection{Misconception 3: Decentralized Trust Is the Problem}
+
+Decentralized social trust is not inherently harmful. Families, neighborhoods, religious communities, mutual aid networks, and local associations are essential to resilience. The risk appears when decentralized trust is disconnected from central institutions, expert systems, and information-integrity channels during a high-uncertainty crisis.
+
+\subsection{Misconception 4: Institutional Trust Means Blind Obedience}
+
+Institutional trust should not be interpreted as submission to authority. Healthy institutional trust means that institutions are perceived as legitimate, competent, accountable, and aligned with public welfare. Blind trust can be dangerous. Earned trust is infrastructure.
+
+\subsection{Misconception 5: Non-Vaccinated Share Equals Anti-Vaxxer Identity}
+
+Non-vaccinated share is an uptake outcome, not an identity measure. It may reflect access, availability, policy, logistics, eligibility, medical contraindications, hesitancy, refusal, or distrust. Behavioral survey items provide better refusal proxies, but with smaller sample size.
+
+\subsection{Misconception 6: Correlation Means Causation}
+
+The models are observational. They estimate associations and incremental predictive value. They do not establish causation. The next phase requires longitudinal designs, pre-pandemic trust baselines, individual-level behavior data, and stronger quasi-experimental strategies.
+
+\section{Conclusions}
+
+The AetherCore empirical sequence began with a broad question: does trust density predict COVID shock response after conventional controls? The answer is provisionally yes, but the stronger conclusion is more precise.
+
+The best current formulation is:
+
+\begin{quote}
+COVID shock outcomes were associated not merely with the amount of trust in a society, but with the topology of trust. Higher centralized institutional trust was generally associated with better outcomes. Higher decentralized social trust relative to centralized institutional trust was associated with worse outcomes, especially when expert and information trust were weak.
+\end{quote}
+
+This formulation is more scientifically useful than the original broad claim. It is also more aligned with the AetherCore Framework. The issue is not trust as an isolated variable. The issue is relational coherence among trust channels. A society may possess strong community trust, but if that trust is epistemically isolated from reliable institutions, expert knowledge, and information-integrity systems, it may coordinate resistance rather than recovery.
+
+In AetherCore language, the failure mode is not simply distrust. It is trust migration under conditions of institutional legitimacy collapse and epistemic fragmentation.
+
+\section{Further Research Areas}
+
+\subsection{Pre-Pandemic Trust Baselines}
+
+Future tests should replicate the analysis using trust measures collected strictly before COVID-19. Earlier WVS waves, European Social Survey, Latinobarometro, Afrobarometer, Asian Barometer, Gallup World Poll, and country-specific longitudinal surveys may provide stronger temporal ordering.
+
+\subsection{Individual-Level Multilevel Modeling}
+
+Country-level models risk ecological fallacy. The next major step is individual-level modeling:
+
+\[
+\text{Behavior}_{ij} =
+f(\text{individual trust}_{ij},
+\text{country trust topology}_{j},
+\text{controls}_{ij},
+\text{controls}_{j}).
+\]
+
+This would test whether individuals with low institutional trust and high local-network reliance were more likely to refuse vaccination, avoid masks, or endorse government-control beliefs.
+
+\subsection{Information Ecology}
+
+The information-trust proxy used here is weak. Future work should add:
+
+\begin{itemize}
+  \item press freedom indices;
+  \item media polarization measures;
+  \item misinformation exposure data;
+  \item social media penetration;
+  \item platform trust;
+  \item V-Dem digital society indicators;
+  \item fact-checking infrastructure.
+\end{itemize}
+
+\subsection{State Capacity and Legitimacy}
+
+Institutional trust may reflect real competence. Future work should separate:
+
+\begin{itemize}
+  \item trust as public psychology;
+  \item state capacity as institutional performance;
+  \item legitimacy as perceived moral authority;
+  \item accountability as constraint on institutional abuse.
+\end{itemize}
+
+This distinction matters because the policy implication is not ``increase trust messaging.'' It is to build institutions that deserve trust.
+
+\subsection{Shock Generalization}
+
+COVID is only one shock. The trust-migration hypothesis should be tested against:
+
+\begin{itemize}
+  \item natural disasters;
+  \item financial crises;
+  \item public-health campaigns;
+  \item election legitimacy crises;
+  \item climate adaptation events;
+  \item infrastructure failures;
+  \item cyberattacks and information shocks.
+\end{itemize}
+
+\subsection{Trust Recovery Dynamics}
+
+Future research should examine not only shock performance, but trust repair:
+
+\begin{itemize}
+  \item How quickly does institutional trust recover after failure?
+  \item Which institutions recover trust fastest?
+  \item Does transparent admission of error improve recovery?
+  \item Do decentralized communities reconnect to institutions after crisis, or remain separated?
+\end{itemize}
+
+\section{Recommended Strategy Before Publication}
+
+\subsection{Freeze a Main Model}
+
+The paper should define one primary confirmatory model before additional exploration:
+
+\begin{align*}
+\text{Deaths per Million} \sim{}&
+\text{Controls} +
+\text{Centralized Institutional Trust} \\
+&+
+\text{Decentralized Social Trust} +
+\text{Expert Trust} +
+\text{Information Trust}.
+\end{align*}
+
+A second pre-specified model should test:
+
+\[
+\text{Deaths per Million} \sim
+\text{Controls} +
+\text{Centralization Gap}.
+\]
+
+Exploratory models can then examine misalignment indices and behavioral outcomes.
+
+\subsection{Prepare a Replication Package}
+
+The repository should include:
+
+\begin{itemize}
+  \item raw-data download scripts;
+  \item manual WVS instructions and licensing note;
+  \item processed datasets;
+  \item analysis scripts for Tests 001--006;
+  \item model output CSVs;
+  \item figures;
+  \item a reproducibility README;
+  \item session/package versions;
+  \item a data dictionary.
+\end{itemize}
+
+\subsection{Add a Data Dictionary}
+
+The repo PDF should include a concise data dictionary mapping every major variable to:
+
+\begin{itemize}
+  \item source dataset;
+  \item original variable name;
+  \item transformation;
+  \item interpretation;
+  \item limitation.
+\end{itemize}
+
+\subsection{Add a Falsification Section}
+
+A publishable paper should explicitly define what would weaken the claim:
+
+\begin{itemize}
+  \item centralization gap loses direction under pre-pandemic trust data;
+  \item effects vanish under stronger state-capacity controls;
+  \item individual-level models do not reproduce the country-level pattern;
+  \item misinformation/information variables explain the entire effect;
+  \item other shocks do not show similar trust-topology dynamics.
+\end{itemize}
+
+\subsection{Add a Pre-Registration Appendix}
+
+The next version should include a pre-registration appendix specifying:
+
+\begin{itemize}
+  \item primary outcomes;
+  \item primary trust predictors;
+  \item control variables;
+  \item exclusion rules;
+  \item robustness checks;
+  \item correction strategy for multiple comparisons.
+\end{itemize}
+
+\section{What Else Should Be Included in the Repo PDF?}
+
+The empirical repo PDF should include the following artifacts beyond the narrative white paper:
+
+\begin{enumerate}
+  \item \textbf{Executive summary}: one page with main findings, limitations, and next steps.
+  \item \textbf{Theory-to-variable map}: how AetherCore concepts map to measurable variables.
+  \item \textbf{Dataset provenance table}: source URLs, download dates, file names, and licenses.
+  \item \textbf{Variable dictionary}: original variables, transformations, constructed variables, and caveats.
+  \item \textbf{Model specification appendix}: exact formulas for every test.
+  \item \textbf{Full regression tables}: not only selected coefficients.
+  \item \textbf{Robustness appendix}: log, winsorized, rank, robust regression, and leave-one-out outputs.
+  \item \textbf{Figures appendix}: scatterplots, coefficient plots, heatmaps, and influence plots.
+  \item \textbf{Limitations and falsification appendix}: explicit conditions that would weaken or reject the trust-migration claim.
+  \item \textbf{Future research roadmap}: data acquisition targets, replication strategy, and pre-registration plan.
+  \item \textbf{Reproducibility instructions}: how to recreate all outputs from raw data.
+  \item \textbf{Ethics note}: avoid stigmatizing communities; distinguish distrust caused by real institutional failure from misinformation-driven distrust.
+\end{enumerate}
+
+\section*{Final Statement}
+\addcontentsline{toc}{section}{Final Statement}
+
+The first empirical AetherCore test sequence found a meaningful signal: trust topology appears associated with crisis response. The most scientifically defensible claim is not that trust universally improves outcomes, nor that centralized institutions should be trusted uncritically, nor that decentralized communities are dangerous. The defensible claim is subtler and stronger:
+
+\begin{quote}
+In a systemic shock, societies appear more resilient when centralized institutions, expert systems, information channels, and decentralized communities remain coherently aligned. When trust migrates away from central institutions into decentralized networks while expert and information trust are weak, coordination may fragment and mortality risk may rise.
+\end{quote}
+
+This is the next AetherCore research frontier: not trust as sentiment, but trust as system architecture.
+
+\end{document}

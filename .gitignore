@@ -1,0 +1,27 @@
+# LaTeX build byproducts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Local LaTeX working directory
+latex/build/
+tmp/
+__pycache__/
+*.pyc
+
+# Downloaded public/raw research data; scripts document how to recreate these.
+research/aethercore-test-001/data_raw/

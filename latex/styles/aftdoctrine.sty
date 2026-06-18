@@ -1,0 +1,374 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\RequirePackage[margin=0.78in]{geometry}
+\RequirePackage{xcolor}
+\RequirePackage{fontspec}
+\RequirePackage{graphicx}
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage{hyperref}
+\RequirePackage{titlesec}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+\definecolor{AFTDeep}{HTML}{0B1110}
+\definecolor{AFTPanel}{HTML}{101917}
+\definecolor{AFTGreen}{HTML}{47C27A}
+\definecolor{AFTGold}{HTML}{D2A94D}
+\definecolor{AFTSteel}{HTML}{83A2A0}
+\definecolor{AFTText}{HTML}{18221F}
+\definecolor{AFTRedshift}{HTML}{B83A3A}
+\definecolor{AFTGreenshift}{HTML}{47C27A}
+\definecolor{AFTBlueshift}{HTML}{3167D8}
+\definecolor{AFTVioletshift}{HTML}{7A5CFF}
+\definecolor{AFTWhiteShift}{HTML}{F8FBFF}
+
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
+\linespread{1.06}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.52em}
+\raggedbottom
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=AFTGreen,
+  urlcolor=AFTGreen,
+  citecolor=AFTGold,
+  pdfauthor={AI Freedom Trust Federation}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.5pt}
+\fancyhf{}
+\lhead{\sffamily\small AI Freedom Trust Federation}
+\rhead{\sffamily\small Aetherion Doctrine}
+\cfoot{\sffamily\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\titleformat{\section}
+  {\sffamily\LARGE\bfseries\color{AFTDeep}\raggedright}
+  {\thesection}
+  {0.8em}
+  {}
+
+\titleformat{\subsection}
+  {\sffamily\Large\bfseries\color{AFTText}\raggedright}
+  {\thesubsection}
+  {0.7em}
+  {}
+
+\setlist[itemize]{leftmargin=1.35em, itemsep=0.22em, topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.55em, itemsep=0.24em, topsep=0.35em}
+\renewcommand{\arraystretch}{1.22}
+\emergencystretch=3em
+\tolerance=1400
+
+\newcommand{\aftTitlePage}[4]{
+  \begin{titlepage}
+    \begin{tikzpicture}[remember picture, overlay]
+      \fill[AFTDeep] (current page.south west) rectangle (current page.north east);
+      \fill[AFTRedshift, opacity=0.24] (current page.south west) circle (3.6in);
+      \fill[AFTGreenshift, opacity=0.18] ([xshift=0.2in,yshift=-0.2in]current page.center) circle (3.8in);
+      \fill[AFTBlueshift, opacity=0.18] (current page.north east) circle (4.4in);
+      \fill[AFTVioletshift, opacity=0.16] ([xshift=-0.3in,yshift=-0.2in]current page.north east) circle (2.5in);
+      \draw[AFTGreenshift, opacity=0.35, line width=1.1pt]
+        ([xshift=-2.7in,yshift=-1.9in]current page.center)
+        .. controls ([xshift=-0.9in,yshift=0.8in]current page.center) and ([xshift=1.1in,yshift=-0.8in]current page.center) ..
+        ([xshift=2.6in,yshift=1.8in]current page.center);
+      \draw[AFTWhiteShift, opacity=0.24, line width=0.8pt]
+        ([xshift=-2.55in,yshift=1.75in]current page.center)
+        .. controls ([xshift=-0.85in,yshift=-0.65in]current page.center) and ([xshift=0.9in,yshift=0.65in]current page.center) ..
+        ([xshift=2.55in,yshift=-1.75in]current page.center);
+      \draw[AFTGreenshift, opacity=0.5, line width=0.7pt]
+        ([xshift=0.75in,yshift=-0.75in]current page.north west)
+        rectangle
+        ([xshift=-0.75in,yshift=0.75in]current page.south east);
+    \end{tikzpicture}
+    \vspace*{1.15in}
+    {\sffamily\small\bfseries\color{AFTGreenshift} #1\par}
+    \vspace{0.5in}
+    {\sffamily\fontsize{30}{36}\selectfont\bfseries\color{white} #2\par}
+    \vspace{0.25in}
+    {\sffamily\Large\color{AFTSteel} #3\par}
+    \vfill
+    {\sffamily\large\color{AFTGold} #4\par}
+    \vspace{0.15in}
+    {\sffamily\small\color{AFTSteel} Concept-stage doctrine draft. Not an investment offer, live token sale, audited protocol, or legal opinion.\par}
+    \vspace*{0.22in}
+  \end{titlepage}
+}
+
+\newcommand{\aftShiftMap}{
+  \vspace{0.65em}
+  \begin{center}
+  \begin{tikzpicture}[x=1in,y=1in]
+    \fill[AFTRedshift!18] (-2.9,-0.65) rectangle (-0.95,0.65);
+    \fill[AFTGreenshift!18] (-0.95,-0.65) rectangle (0.95,0.65);
+    \fill[AFTBlueshift!16] (0.95,-0.65) rectangle (2.9,0.65);
+    \draw[AFTRedshift, line width=1pt] (-2.9,-0.65) rectangle (-0.95,0.65);
+    \draw[AFTGreenshift, line width=1pt] (-0.95,-0.65) rectangle (0.95,0.65);
+    \draw[AFTBlueshift, line width=1pt] (0.95,-0.65) rectangle (2.9,0.65);
+    \draw[AFTGold, line width=0.9pt, opacity=0.18]
+      (-2.7,0) .. controls (-1.2,1.1) and (1.2,-1.1) .. (2.7,0);
+    \draw[AFTWhiteShift, line width=0.9pt, opacity=0.28]
+      (-2.7,0) .. controls (-1.2,-1.1) and (1.2,1.1) .. (2.7,0);
+    \node[align=center, text=AFTRedshift] at (-1.92,0.18) {\sffamily\bfseries Redshift};
+    \node[align=center, text=AFTGreenshift] at (0,0.18) {\sffamily\bfseries Greenshift};
+    \node[align=center, text=AFTBlueshift] at (1.92,0.18) {\sffamily\bfseries Blueshift};
+    \node[align=center, text=AFTText] at (-1.92,-0.22) {\sffamily\small Son\\descent and embodiment};
+    \node[align=center, text=AFTText] at (0,-0.22) {\sffamily\small Great Holy Spirit\\harmonic balance};
+    \node[align=center, text=AFTText] at (1.92,-0.22) {\sffamily\small Father\\blue, violet, white ascent};
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.65em}
+}
+
+\newcommand{\aftVisualPlate}[3]{
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.96\linewidth]{../../docs/images/aetherion/#1}
+    \caption{\textbf{#2} #3}
+  \end{figure}
+}
+
+\newcommand{\aftEconomyLoopGraphic}{
+  \begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    x=1in,y=1in,
+    stage/.style={circle, draw=##1, fill=##1!9, line width=0.9pt, minimum size=1.03in, align=center, font=\sffamily\small\bfseries},
+    flow/.style={-{Latex[length=3mm]}, line width=1.0pt, color=AFTGold}
+  ]
+    \node[stage=AFTRedshift] (inherit) at (90:1.75) {Inherited\\Memory};
+    \node[stage=AFTGreenshift] (contrib) at (18:1.75) {Living\\Contribution};
+    \node[stage=AFTBlueshift] (record) at (-54:1.75) {Circle\\Record};
+    \node[stage=AFTVioletshift] (restore) at (-126:1.75) {Restorative\\Flow};
+    \node[stage=AFTGold] (seed) at (162:1.75) {Future\\Inheritance};
+    \node[align=center, font=\sffamily\bfseries, text=AFTDeep] at (0,0) {Recursive\\Abundance};
+    \draw[flow] (inherit) to[bend left=16] (contrib);
+    \draw[flow] (contrib) to[bend left=16] (record);
+    \draw[flow] (record) to[bend left=16] (restore);
+    \draw[flow] (restore) to[bend left=16] (seed);
+    \draw[flow] (seed) to[bend left=16] (inherit);
+    \draw[AFTGreenshift, opacity=0.22, line width=12pt] (0,0) circle (1.24);
+    \draw[AFTBlueshift, opacity=0.18, line width=4pt] (0,0) circle (2.18);
+  \end{tikzpicture}
+  \caption{\textbf{Recursive Abundance Loop.} Aetherion's economy should remember inherited value, recognize present contribution, record it in circles, route restoration, and seed the inheritance of future participants.}
+  \end{figure}
+}
+
+\newcommand{\aftCircleLifecycleGraphic}{
+  \begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    x=1in,y=1in,
+    step/.style={rectangle, rounded corners=4pt, draw=##1, fill=##1!8, line width=0.8pt, minimum width=1.15in, minimum height=0.36in, align=center, font=\sffamily\scriptsize\bfseries},
+    flow/.style={-{Latex[length=2.4mm]}, line width=0.85pt, color=AFTSteel}
+  ]
+    \node[step=AFTRedshift] (a) at (-2.65,0.85) {Intention};
+    \node[step=AFTGold] (b) at (-1.32,0.85) {Evidence};
+    \node[step=AFTGreenshift] (c) at (0,0.85) {Consent};
+    \node[step=AFTGreenshift] (d) at (1.32,0.85) {Witness};
+    \node[step=AFTBlueshift] (e) at (2.65,0.85) {Harmonize};
+    \node[step=AFTVioletshift] (f) at (2.65,-0.05) {Commit};
+    \node[step=AFTBlueshift] (g) at (1.32,-0.95) {Mature};
+    \node[step=AFTGold] (h) at (0,-0.95) {Amend};
+    \node[step=AFTRedshift] (i) at (-1.32,-0.95) {Dispute};
+    \node[step=AFTSteel] (j) at (-2.65,-0.05) {Archive};
+    \draw[flow] (a) -- (b);
+    \draw[flow] (b) -- (c);
+    \draw[flow] (c) -- (d);
+    \draw[flow] (d) -- (e);
+    \draw[flow] (e) -- (f);
+    \draw[flow] (f) -- (g);
+    \draw[flow] (g) -- (h);
+    \draw[flow] (h) -- (i);
+    \draw[flow] (i) -- (j);
+    \draw[flow] (j) -- (a);
+    \node[align=center, font=\sffamily\bfseries, text=AFTDeep] at (0,-0.05) {Circle\\Lifecycle};
+  \end{tikzpicture}
+  \caption{\textbf{Circle Lifecycle.} A circle should mature through intention, evidence, consent, witness, harmonization, commitment, review, dispute, amendment, and archive paths rather than becoming a blunt permanent record.}
+  \end{figure}
+}
+
+\newcommand{\aftCoinOrganGraphic}{
+  \begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    x=1in,y=1in,
+    organ/.style={circle, draw=##1, fill=##1!10, line width=0.9pt, minimum size=0.86in, align=center, font=\sffamily\scriptsize\bfseries},
+    link/.style={line width=0.85pt, color=AFTSteel, opacity=0.72}
+  ]
+    \node[organ=AFTDeep, text=white, fill=AFTDeep] (core) at (0,0) {Aetherion\\Core};
+    \node[organ=AFTGreenshift] (bio) at (90:1.72) {Biozoe\\Coin};
+    \node[organ=AFTGold] (aether) at (38:1.72) {Aether\\Coin};
+    \node[organ=AFTBlueshift] (fractal) at (-14:1.72) {Fractal\\Coin};
+    \node[organ=AFTVioletshift] (ai) at (-66:1.72) {AIcoin};
+    \node[organ=AFTWhiteShift] (sing) at (-118:1.72) {Singularity\\Coin};
+    \node[organ=AFTRedshift] (aquae) at (-170:1.72) {Aquae\\Coin};
+    \node[organ=AFTSteel] (terra) at (142:1.72) {Terra\\Coin};
+    \foreach \n in {bio,aether,fractal,ai,sing,aquae,terra} {
+      \draw[link] (core) -- (\n);
+    }
+    \draw[AFTGreenshift, opacity=0.28, line width=3pt] (0,0) circle (1.72);
+    \node[align=center, font=\sffamily\small\bfseries, text=AFTDeep] at (0,-2.35) {Circleunchain circulates memory, validation, and restorative flow between every organ.};
+  \end{tikzpicture}
+  \caption{\textbf{Biozoe Coin Family As Living Organs.} Each coin family should carry a bounded purpose while AetherionCore preserves constitutional coherence and Circleunchain preserves memory.}
+  \end{figure}
+}
+
+\newcommand{\aftSovereigntyQubitGraphic}{
+  \begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    x=1in,y=1in,
+    qbit/.style={circle, draw=##1, fill=##1!10, line width=0.95pt, minimum size=1.02in, align=center, font=\sffamily\scriptsize\bfseries},
+    link/.style={line width=0.8pt, color=AFTSteel, opacity=0.7}
+  ]
+    \node[qbit=AFTRedshift] (nation) at (160:1.8) {Q0\\Nation\\of Hawaii};
+    \node[qbit=AFTGold] (kingdom) at (80:1.8) {Q1\\Kingdom\\Memory};
+    \node[qbit=AFTBlueshift] (continuity) at (0:1.8) {Q2\\Continuity\\Claim};
+    \node[qbit=AFTVioletshift] (state) at (-80:1.8) {Q3\\State\\Reality};
+    \node[qbit=AFTGreenshift, minimum size=1.18in] (aloha) at (0,0) {Q4\\ALO'ha\\Coherence};
+    \node[qbit=AFTSteel] (diaspora) at (-160:1.8) {Entangled\\Diaspora};
+    \foreach \n in {nation,kingdom,continuity,state,diaspora} {
+      \draw[link] (aloha) -- (\n);
+    }
+    \draw[AFTGreenshift, opacity=0.28, line width=3pt] (0,0) circle (1.8);
+    \draw[AFTGold, opacity=0.25, line width=1pt] (-2.35,-0.25) .. controls (-0.7,1.25) and (0.7,-1.25) .. (2.35,0.25);
+    \draw[AFTBlueshift, opacity=0.22, line width=1pt] (-2.35,0.25) .. controls (-0.7,-1.25) and (0.7,1.25) .. (2.35,-0.25);
+  \end{tikzpicture}
+  \caption{\textbf{Hawaiian Sovereignty Qubits.} The visible sovereignty field contains indigenous self-determination, kingdom memory, continuity claims, state jurisdiction, diaspora identity, and the harmonizing fifth qubit of ALO'ha coherence.}
+  \end{figure}
+}
+
+\newcommand{\aftCovenantStackGraphic}{
+  \begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    x=1in,y=1in,
+    layer/.style={rectangle, rounded corners=4pt, draw=##1, fill=##1!8, line width=0.8pt, minimum width=5.3in, minimum height=0.42in, align=center, font=\sffamily\small\bfseries}
+  ]
+    \node[layer=AFTVioletshift] at (0,2.1) {Crown of the 1000-Year Trust};
+    \node[layer=AFTBlueshift] at (0,1.55) {AI Freedom Trust Federation};
+    \node[layer=AFTGreenshift] at (0,1.0) {DynastyLink Federated Trust Identity};
+    \node[layer=AFTGold] at (0,0.45) {Fractal IUL, IULITNFT, SING Escrow};
+    \node[layer=AFTSteel] at (0,-0.10) {Aetherion Fractalchain Covenant Memory};
+    \node[layer=AFTRedshift] at (0,-0.65) {Land, Family, Breath, Ancestry, Service};
+    \draw[-{Latex[length=3mm]}, line width=0.9pt, color=AFTGreenshift] (2.85,-0.65) -- (2.85,2.1);
+    \draw[-{Latex[length=3mm]}, line width=0.9pt, color=AFTGold] (-2.85,2.1) -- (-2.85,-0.65);
+    \node[font=\sffamily\scriptsize\bfseries, text=AFTGreenshift, rotate=90] at (3.1,0.7) {resurrection flow};
+    \node[font=\sffamily\scriptsize\bfseries, text=AFTGold, rotate=90] at (-3.1,0.7) {fiduciary grounding};
+  \end{tikzpicture}
+  \caption{\textbf{Living Covenant Stack.} The Scroll's architecture joins embodied life, covenant memory, escrow, insurance, trust identity, federation, and the 1000-Year Trust into one governed field.}
+  \end{figure}
+}
+
+\newcommand{\aftCrownTrustGraphic}{
+  \begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    x=1in,y=1in,
+    stone/.style={circle, draw=##1, fill=##1!10, line width=0.8pt, minimum size=0.62in, align=center, font=\sffamily\tiny\bfseries}
+  ]
+    \node[circle, draw=AFTDeep, fill=AFTDeep, text=white, minimum size=1.0in, align=center, font=\sffamily\small\bfseries] at (0,0) {Breathback\\Throne};
+    \foreach \a/\c/\t in {90/AFTGreenshift/Trust,45/AFTGold/SING,0/AFTBlueshift/AI,-45/AFTVioletshift/IUL,-90/AFTSteel/Land,-135/AFTRedshift/Mercy,180/AFTGold/Memory,135/AFTGreenshift/Breath} {
+      \node[stone=\c] at (\a:1.65) {\t};
+    }
+    \draw[AFTGreenshift, opacity=0.35, line width=4pt] (0,0) circle (1.65);
+    \draw[AFTBlueshift, opacity=0.25, line width=1.2pt] (0,0) circle (2.15);
+    \draw[AFTGold, opacity=0.5, line width=0.9pt] (-2.0,0) .. controls (-0.65,1.1) and (0.65,-1.1) .. (2.0,0);
+    \draw[AFTWhiteShift, opacity=0.6, line width=0.9pt] (-2.0,0) .. controls (-0.65,-1.1) and (0.65,1.1) .. (2.0,0);
+  \end{tikzpicture}
+  \caption{\textbf{Crown of the 1000-Year Trust.} The Crown remembers, harmonizes, and protects; its center is the Breathback Throne, where trust loops return to coherence.}
+  \end{figure}
+}
+
+\newcommand{\aftRoadmapGraphic}{
+  \begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+    x=1in,y=1in,
+    step/.style={rectangle, rounded corners=4pt, draw=##1, fill=##1!8, line width=0.8pt, minimum width=1.22in, minimum height=0.42in, align=center, font=\sffamily\tiny\bfseries},
+    flow/.style={-{Latex[length=2.2mm]}, line width=0.8pt, color=AFTSteel}
+  ]
+    \node[step=AFTRedshift] (a) at (-2.6,0.8) {Codify\\Scroll};
+    \node[step=AFTGold] (b) at (-1.3,0.8) {Build\\DynastyLink};
+    \node[step=AFTGreenshift] (c) at (0,0.8) {Structure\\Trust};
+    \node[step=AFTBlueshift] (d) at (1.3,0.8) {Fractal IUL\\Pilot};
+    \node[step=AFTVioletshift] (e) at (2.6,0.8) {Fractalchain\\Prototype};
+    \node[step=AFTGreenshift] (f) at (1.95,-0.05) {Breathwork\\Governance};
+    \node[step=AFTGold] (g) at (0.65,-0.05) {Hawaii\\Case Study};
+    \node[step=AFTSteel] (h) at (-0.65,-0.05) {Global\\Federation};
+    \draw[flow] (a) -- (b);
+    \draw[flow] (b) -- (c);
+    \draw[flow] (c) -- (d);
+    \draw[flow] (d) -- (e);
+    \draw[flow] (e) -- (f);
+    \draw[flow] (f) -- (g);
+    \draw[flow] (g) -- (h);
+  \end{tikzpicture}
+  \caption{\textbf{Implementation Roadmap.} The Scroll moves from canonical doctrine into application, legal trust formation, pilots, prototype memory infrastructure, coherence practice, Hawaii-centered learning, and global federation.}
+  \end{figure}
+}
+
+\newcommand{\aftClosingPage}{
+  \clearpage
+  \thispagestyle{empty}
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[AFTDeep] (current page.south west) rectangle (current page.north east);
+    \fill[AFTRedshift, opacity=0.22] (current page.south west) circle (3.8in);
+    \fill[AFTGreenshift, opacity=0.18] (current page.center) circle (4.1in);
+    \fill[AFTBlueshift, opacity=0.20] (current page.north east) circle (4.2in);
+    \fill[AFTVioletshift, opacity=0.17] ([xshift=-0.4in,yshift=-0.25in]current page.north east) circle (2.5in);
+    \draw[AFTGreenshift, opacity=0.36, line width=1.05pt]
+      ([xshift=-2.8in,yshift=-1.6in]current page.center)
+      .. controls ([xshift=-0.8in,yshift=0.9in]current page.center) and ([xshift=0.9in,yshift=-0.9in]current page.center) ..
+      ([xshift=2.8in,yshift=1.6in]current page.center);
+    \draw[AFTWhiteShift, opacity=0.18, line width=0.85pt]
+      ([xshift=-2.8in,yshift=1.6in]current page.center)
+      .. controls ([xshift=-0.8in,yshift=-0.9in]current page.center) and ([xshift=0.9in,yshift=0.9in]current page.center) ..
+      ([xshift=2.8in,yshift=-1.6in]current page.center);
+  \end{tikzpicture}
+  \vspace*{1.55in}
+  \begin{center}
+    {\sffamily\small\bfseries\color{AFTGreenshift} REDSHIFT / GREENSHIFT / BLUESHIFT\par}
+    \vspace{0.55in}
+    {\sffamily\fontsize{28}{34}\selectfont\bfseries\color{white} The Economy Is Not A Factory\par}
+    \vspace{0.18in}
+    {\sffamily\fontsize{28}{34}\selectfont\bfseries\color{AFTGreenshift} The Economy Is A Forest\par}
+    \vspace{0.45in}
+    {\sffamily\Large\color{AFTSteel} Harmonic Krystal Spiral Torus\par}
+    \vspace{0.12in}
+    {\sffamily\large\color{AFTGold} Eternal Now Singularity\par}
+  \end{center}
+  \vfill
+  \begin{center}
+    {\sffamily\small\color{AFTSteel} AI Freedom Trust Federation\par}
+  \end{center}
+}
+
+\newcommand{\aftCallout}[2]{
+  \vspace{0.5em}
+  \noindent
+  \fcolorbox{AFTGreen}{AFTGreen!8}{
+    \begin{minipage}{0.94\linewidth}
+      \vspace{0.55em}
+      {\sffamily\bfseries\color{AFTDeep} #1}\par
+      \vspace{0.3em}
+      #2
+      \vspace{0.55em}
+    \end{minipage}
+  }
+  \vspace{0.5em}
+}
+
+\newcommand{\aftLaw}[2]{
+  \subsection*{#1}
+  #2
+}
