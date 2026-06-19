@@ -12,6 +12,7 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 - Empirical white paper PDF: [docs/pdf/aethercore-empirical-trust-density-covid.pdf](docs/pdf/aethercore-empirical-trust-density-covid.pdf)
 - AetherCore Volume I PDF: [docs/pdf/aethercore-white-paper-volume-i.pdf](docs/pdf/aethercore-white-paper-volume-i.pdf)
 - Aetherion economy PDF: [docs/pdf/aetherion-restorative-civilization-economy.pdf](docs/pdf/aetherion-restorative-civilization-economy.pdf)
+- Aetherion Flight Paper PDF: [docs/pdf/aetherion-flight-paper-post-quantum-sovereign-network.pdf](docs/pdf/aetherion-flight-paper-post-quantum-sovereign-network.pdf)
 - LaTeX source: [latex/documents](latex/documents)
 
 ## Repository Map
