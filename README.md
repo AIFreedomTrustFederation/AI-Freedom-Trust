@@ -27,6 +27,14 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 - `scripts/build-latex.ps1`: PowerShell builder for LaTeX documents.
 - `research/aethercore-test-001/`: reproducible empirical research project with scripts, processed data, outputs, figures, and reports.
 
+## Public Maturity Labels
+
+The public site now separates claims by maturity so documents, software, and empirical evidence are not presented as equivalent.
+
+- **Empirical / reproducible**: AetherCore Test Series 001-008 has a reproducible research package and compiled PDF, but it remains exploratory and is awaiting external review.
+- **Production-facing, revenue unverified**: Capital City Provisions has operational software patterns for quotes, customer operations, delivery review, persistence, and reporting, but repository evidence does not verify live revenue or order volume.
+- **Doctrinal / conceptual**: Aetherion, stewardship, and covenant papers are design and intellectual material unless separately connected to working deployments or empirical tests.
+
 ## AetherCore Empirical Research
 
 The empirical package currently includes eight linked tests:
@@ -128,3 +136,8 @@ Final PDFs are written to `docs/pdf/`.
 ## Publication Status
 
 This is an active research repository. The empirical work should be read as exploratory, correlational, and falsifiable. The results identify patterns worth testing more deeply; they do not establish causal proof.
+
+Near-term credibility milestones:
+
+1. Prepare an external-review packet for the AetherCore empirical paper, including PDF, source, data/code instructions, limitations, and reviewer invitation list.
+2. Publish a Capital City Provisions operating dashboard that distinguishes software readiness from verified orders, revenue, delivery success, refunds, and repeat customers.
