@@ -46,6 +46,8 @@ Core doctrine / source synthesis:
 - `docs/aetherion-genesis-whitepaper-alpha.md` - alpha Genesis White Paper draft for Aetherion as a recursive civilization network and quantum-resistant biozoecurrency ecosystem
 - `docs/aetherion-flight-paper-post-quantum-sovereign-network.md` - flagship flight paper draft integrating post-quantum architecture, anti-centralization doctrine, Circleunchain, and biozoe coin economics
 - `docs/pdf/aetherion-flight-paper-post-quantum-sovereign-network.pdf` - LaTeX-built public PDF for the Aetherion Flight Paper
+- `docs/pdf/aetherion-genesis-whitepaper-alpha.pdf` - LaTeX-built public PDF for the Aetherion Genesis White Paper
+- `docs/pdf/aetherion-circleunchain-biozoe-source-summary.pdf` - LaTeX-built public PDF for the Circleunchain and Biozoe source summary
 
 Supporting / local work:
 

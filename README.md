@@ -13,6 +13,8 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 - AetherCore Volume I PDF: [docs/pdf/aethercore-white-paper-volume-i.pdf](docs/pdf/aethercore-white-paper-volume-i.pdf)
 - Aetherion economy PDF: [docs/pdf/aetherion-restorative-civilization-economy.pdf](docs/pdf/aetherion-restorative-civilization-economy.pdf)
 - Aetherion Flight Paper PDF: [docs/pdf/aetherion-flight-paper-post-quantum-sovereign-network.pdf](docs/pdf/aetherion-flight-paper-post-quantum-sovereign-network.pdf)
+- Aetherion Genesis White Paper PDF: [docs/pdf/aetherion-genesis-whitepaper-alpha.pdf](docs/pdf/aetherion-genesis-whitepaper-alpha.pdf)
+- Circleunchain and Biozoe Source Summary PDF: [docs/pdf/aetherion-circleunchain-biozoe-source-summary.pdf](docs/pdf/aetherion-circleunchain-biozoe-source-summary.pdf)
 - LaTeX source: [latex/documents](latex/documents)
 
 ## Repository Map
