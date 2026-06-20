@@ -1,18 +1,18 @@
 # Federation Repository Health
 
-Last reviewed: 2026-06-19
+Last reviewed: 2026-06-20
 
 This dashboard separates current status from historical failure notifications. Old failed runs remain in GitHub history; the status below reflects the latest checked operational signal.
 
 | Repository | Role | Latest CI / Build Status | Deployment Status | Current Action |
 | --- | --- | --- | --- | --- |
-| `AI-Freedom-Trust` | Canonical papers, PDFs, empirical package, GitHub Pages site | Passing GitHub Pages build | Live on GitHub Pages | Keep paper library and review packet current |
+| `AI-Freedom-Trust` | Canonical papers, PDFs, empirical package, GitHub Pages site | Local docs/syntax validation pattern added; GitHub Pages previously passing | Live on GitHub Pages | Prepare external-review release tag and keep paper library current |
 | `www.aifreedomtrust.com` | Public portal | Passing GitHub Pages build | Live on GitHub Pages | Keep portal synchronized with canonical research status |
 | `tastycutz` | Production-facing provisions app | Passing `CCP CI` after test glob and E2E stabilization | Latest Vercel production deployments are `Ready` | Monitor scheduled recovery processor and Vercel deployments |
 | `capital-city-provisions` | Applied systems / provisions operations | Passing current CI | Public deployment status not verified in this pass | Preserve as production-facing, revenue-unverified until operating metrics are published |
 | `Aether_Coin_biozonecurrency` | Aetherion wallet/value protocol | Passing latest auto-sync and deploy workflows | Latest checked Aetherion deployment workflows are green | Keep deployment secrets documented; avoid failing when optional deploy targets are not configured |
 | `VPS` | Infrastructure layer | Not checked in this pass | Not checked in this pass | Add CI/deployment signal to dashboard |
-| `AIFT-Forge` | Federation coordination/templates | Not checked in this pass | Not checked in this pass | Add CI/deployment signal to dashboard |
+| `AIFT-Forge` | Federation repo/build/release platform | Local `npm run qa:local` gate passes on 2026-06-20 | No stable release claimed; installable foundation only | Implement protected write gates and live Git client transport evidence |
 
 ## Cleared Issues
 
@@ -26,6 +26,7 @@ This dashboard separates current status from historical failure notifications. O
 - `tastycutz` scheduled recovery processing is only a no-op until `RECOVERY_PROCESS_URL` and `RECOVERY_PROCESS_SECRET` are configured.
 - `capital-city-provisions` should not be described as revenue-verified until real order, revenue, delivery, refund, and repeat-customer metrics are published.
 - Repos without CI should either add minimal build checks or be explicitly labeled as documentation/archive-only.
+- `AI-Freedom-Trust` full empirical rerun still depends on local raw data and should not be implied by docs-only validation.
 
 ## Operating Standard
 

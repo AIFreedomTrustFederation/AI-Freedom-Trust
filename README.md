@@ -16,6 +16,9 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 - Aetherion Genesis White Paper PDF: [docs/pdf/aetherion-genesis-whitepaper-alpha.pdf](docs/pdf/aetherion-genesis-whitepaper-alpha.pdf)
 - Circleunchain and Biozoe Source Summary PDF: [docs/pdf/aetherion-circleunchain-biozoe-source-summary.pdf](docs/pdf/aetherion-circleunchain-biozoe-source-summary.pdf)
 - Repository health dashboard: [docs/repo-health.md](docs/repo-health.md)
+- Current repo status: [docs/status.md](docs/status.md)
+- Validation guide: [docs/validation.md](docs/validation.md)
+- Security and privacy boundaries: [docs/security-and-privacy.md](docs/security-and-privacy.md)
 - AetherCore external review packet: [docs/aethercore-external-review-packet.md](docs/aethercore-external-review-packet.md)
 - LaTeX source: [latex/documents](latex/documents)
 
