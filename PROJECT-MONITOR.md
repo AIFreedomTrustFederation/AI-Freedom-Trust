@@ -25,6 +25,16 @@ This folder is the local command center for AI Freedom Trust monitoring.
   - Key areas: `app`, `components`, `lib`, `data`, `database`, `docs`, `infra`, `public`, `scripts`
   - Verification script: `npm run verify`
   - Individual checks: `npm run typecheck`, `npm run lint`, `npm run build`
+- `C:\Users\aifre\OneDrive\Documents\CCP\Aether_Coin_biozonecurrency`
+  - Type: AIFT-adjacent stewardship, wallet, token taxonomy, and local-first DynastyLink research lane
+  - Key areas: `docs`, `apps/dynastylink-local`, `quantum-validator`, `api-gateway`, `client`, `server`, `shared`, `scripts`
+  - Verification script: `npm run qa:local`
+  - Public role: Aetherion wallet/research foundation and Biozonecurrency stewardship validation surface
+- `C:\Users\aifre\OneDrive\Documents\CCP\AIFT-Forge`
+  - Type: AIFT federation product foundation
+  - Key areas: `apps`, `packages`, `docs`, `scripts`, `tests`
+  - Verification script: `npm run qa:local`
+  - Public role: Federation core, local API, product shell, Git access, and package readiness lane
 
 ## Monitor Priorities
 
