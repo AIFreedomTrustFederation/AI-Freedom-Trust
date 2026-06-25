@@ -1,0 +1,33 @@
+{
+  "schema": "https://aifreedomtrustfederation.org/schemas/federation.v0.json",
+  "kind": "federation-manifest",
+  "version": "0.1.0",
+  "status": "doctrine-draft",
+  "name": "AI Freedom Trust Federation",
+  "principles": [
+    "local-first sovereignty",
+    "holographic trust seeds",
+    "human agency",
+    "privacy by default",
+    "evidence-bounded claims",
+    "voluntary federation",
+    "open and inspectable doctrine"
+  ],
+  "canonicalDocuments": {
+    "readme": "README.md",
+    "agents": "AGENTS.md",
+    "holographicTrustArchitecture": "docs/holographic-trust-architecture.md",
+    "constitutionalHolographicTrustsChapter": "docs/constitutional-chapter-holographic-trusts.md",
+    "trustSeedTemplate": "templates/trust-seed/README.md"
+  },
+  "trustSeedPattern": {
+    "templatePath": "templates/trust-seed",
+    "localFirst": true,
+    "federationOptional": true,
+    "privacyDefault": "local-private"
+  },
+  "maturity": {
+    "holographicTrustLayer": "doctrinal-conceptual",
+    "aetherCoreResearch": "exploratory-reproducible-awaiting-external-review"
+  }
+}

@@ -1,6 +1,6 @@
 # AI Freedom Trust Federation
 
-Public repository for the AI Freedom Trust Federation website, LaTeX white papers, and the AetherCore empirical research package.
+Public repository for the AI Freedom Trust Federation website, LaTeX white papers, constitutional doctrine, trust-seed templates, and the AetherCore empirical research package.
 
 The current research release centers on **AetherCore Test 001: Trust Density and COVID Shock Recovery**, an empirical test suite asking whether measurable trust variables help predict COVID-19 shock response outcomes after controlling for conventional material and institutional factors.
 
@@ -8,6 +8,9 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 
 - Public site: https://aifreedomtrustfederation.github.io/AI-Freedom-Trust/
 - GitHub repository: https://github.com/AIFreedomTrustFederation/AI-Freedom-Trust
+- Holographic trust architecture: [docs/holographic-trust-architecture.md](docs/holographic-trust-architecture.md)
+- Draft constitutional chapter on holographic trusts: [docs/constitutional-chapter-holographic-trusts.md](docs/constitutional-chapter-holographic-trusts.md)
+- Trust seed template: [templates/trust-seed](templates/trust-seed)
 - AetherCore empirical test folder: [research/aethercore-test-001](research/aethercore-test-001)
 - Empirical white paper PDF: [docs/pdf/aethercore-empirical-trust-density-covid.pdf](docs/pdf/aethercore-empirical-trust-density-covid.pdf)
 - AetherCore Volume I PDF: [docs/pdf/aethercore-white-paper-volume-i.pdf](docs/pdf/aethercore-white-paper-volume-i.pdf)
@@ -26,8 +29,9 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 
 - `index.html` and `styles.css`: static GitHub Pages website.
 - `assets/`: website media assets.
-- `docs/`: doctrine drafts, source summaries, internal inventory notes, and generated public PDFs.
+- `docs/`: doctrine drafts, source summaries, internal inventory notes, constitutional drafts, trust architecture notes, and generated public PDFs.
 - `docs/pdf/`: compiled PDF deliverables intended for reading and sharing.
+- `templates/trust-seed/`: canonical starter documents for creating a local-first holographic Federation trust seed.
 - `latex/`: LaTeX document sources, shared style package, and build outputs.
 - `scripts/build-latex.ps1`: PowerShell builder for LaTeX documents.
 - `research/aethercore-test-001/`: reproducible empirical research project with scripts, processed data, outputs, figures, and reports.
@@ -39,6 +43,20 @@ The public site now separates claims by maturity so documents, software, and emp
 - **Empirical / reproducible**: AetherCore Test Series 001-008 has a reproducible research package and compiled PDF, but it remains exploratory and is awaiting external review.
 - **Production-facing, revenue unverified**: Capital City Provisions has operational software patterns for quotes, customer operations, delivery review, persistence, and reporting, but repository evidence does not verify live revenue or order volume.
 - **Doctrinal / conceptual**: Aetherion, stewardship, and covenant papers are design and intellectual material unless separately connected to working deployments or empirical tests.
+
+## Holographic Trust Seed Layer
+
+The repository now includes a first canonical draft of the Federation's holographic trust architecture.
+
+The operating idea is that a user should not merely create an account. A user should be able to instantiate a local-first trust seed: a sovereign, inspectable copy of the Federation pattern scaled to one person, family, business, ministry, cooperative, community, repository, or project.
+
+Start with:
+
+- [docs/holographic-trust-architecture.md](docs/holographic-trust-architecture.md)
+- [docs/constitutional-chapter-holographic-trusts.md](docs/constitutional-chapter-holographic-trusts.md)
+- [templates/trust-seed](templates/trust-seed)
+
+This layer is doctrinal and architectural. It does not create legal, tax, investment, securities, custody, medical, or financial advice. Regulated uses require qualified review before deployment.
 
 ## AetherCore Empirical Research
 
@@ -137,12 +155,3 @@ Build one document:
 ```
 
 Final PDFs are written to `docs/pdf/`.
-
-## Publication Status
-
-This is an active research repository. The empirical work should be read as exploratory, correlational, and falsifiable. The results identify patterns worth testing more deeply; they do not establish causal proof.
-
-Near-term credibility milestones:
-
-1. Prepare an external-review packet for the AetherCore empirical paper, including PDF, source, data/code instructions, limitations, and reviewer invitation list.
-2. Publish a Capital City Provisions operating dashboard that distinguishes software readiness from verified orders, revenue, delivery success, refunds, and repeat customers.
