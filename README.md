@@ -11,6 +11,10 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 - Holographic trust architecture: [docs/holographic-trust-architecture.md](docs/holographic-trust-architecture.md)
 - Draft constitutional chapter on holographic trusts: [docs/constitutional-chapter-holographic-trusts.md](docs/constitutional-chapter-holographic-trusts.md)
 - Trust seed template: [templates/trust-seed](templates/trust-seed)
+- Holographic principle: [HOLOGRAPHIC_PRINCIPLE.md](HOLOGRAPHIC_PRINCIPLE.md)
+- Tree of Life: [TREE_OF_LIFE.md](TREE_OF_LIFE.md)
+- Federation governance: [GOVERNANCE.md](GOVERNANCE.md)
+- Federation API: [API.md](API.md)
 - Federation ontology: [ONTOLOGY.md](ONTOLOGY.md)
 - Federation topology: [TOPOLOGY.md](TOPOLOGY.md)
 - Living Atlas: [LIVING_ATLAS.md](LIVING_ATLAS.md)
@@ -39,7 +43,7 @@ The current research release centers on **AetherCore Test 001: Trust Density and
 - `docs/pdf/`: compiled PDF deliverables intended for reading and sharing.
 - `templates/trust-seed/`: canonical starter documents for creating a local-first holographic Federation trust seed.
 - `manifests/`: machine-readable Federation and trust-seed manifest drafts.
-- `ONTOLOGY.md`, `TOPOLOGY.md`, `LIVING_ATLAS.md`, `IDENTITY.md`, `MISSION_SYSTEM.md`, and `ECONOMY.md`: Federation genome documents.
+- `HOLOGRAPHIC_PRINCIPLE.md`, `TREE_OF_LIFE.md`, `GOVERNANCE.md`, `API.md`, `ONTOLOGY.md`, `TOPOLOGY.md`, `LIVING_ATLAS.md`, `IDENTITY.md`, `MISSION_SYSTEM.md`, and `ECONOMY.md`: Phase 0 Federation genome documents.
 - `latex/`: LaTeX document sources, shared style package, and build outputs.
 - `scripts/build-latex.ps1`: PowerShell builder for LaTeX documents.
 - `research/aethercore-test-001/`: reproducible empirical research project with scripts, processed data, outputs, figures, and reports.
@@ -64,12 +68,16 @@ Start with:
 - [docs/constitutional-chapter-holographic-trusts.md](docs/constitutional-chapter-holographic-trusts.md)
 - [templates/trust-seed](templates/trust-seed)
 
-## Federation Genome Documents
+## Phase 0 Federation Genome
 
-The genome layer defines the shared language, topology, map, identity model, mission system, economy, and agent behavior that future applications can inherit.
+The Phase 0 genome layer defines the shared language, topology, map, identity model, governance model, Tree of Life, mission system, economy, API principles, and agent behavior that future applications can inherit.
 
 Start with:
 
+- [HOLOGRAPHIC_PRINCIPLE.md](HOLOGRAPHIC_PRINCIPLE.md)
+- [TREE_OF_LIFE.md](TREE_OF_LIFE.md)
+- [GOVERNANCE.md](GOVERNANCE.md)
+- [API.md](API.md)
 - [ONTOLOGY.md](ONTOLOGY.md)
 - [TOPOLOGY.md](TOPOLOGY.md)
 - [LIVING_ATLAS.md](LIVING_ATLAS.md)
@@ -77,28 +85,3 @@ Start with:
 - [MISSION_SYSTEM.md](MISSION_SYSTEM.md)
 - [ECONOMY.md](ECONOMY.md)
 - [AGENTS.md](AGENTS.md)
-
-This layer is doctrinal and architectural. It does not create legal, tax, investment, securities, custody, medical, or financial advice. Regulated uses require qualified review before deployment.
-
-## AetherCore Empirical Research
-
-The empirical package currently includes eight linked tests:
-
-1. **Test 001: Trust Density and COVID Shock Recovery**  
-   Country-level WVS Wave 7 trust variables merged with OWID COVID outcomes and controls.
-2. **Test 002: Behavioral Resistance**  
-   YouGov/Imperial behavioral indicators for vaccine refusal, mask refusal, and authority-trust behavior.
-3. **Test 003: Trust Taxonomy**  
-   Centralized institutional trust, decentralized social trust, expert trust proxies, and trust-gap measures.
-4. **Test 004: Robustness**  
-   Robustness checks, leave-one-out diagnostics, and sensitivity analysis.
-5. **Test 005: Timing and State Capacity**  
-   Fieldwork timing checks and World Governance Indicators state-capacity controls.
-6. **Test 006: Mechanism Interactions**  
-   Interaction tests for trust, expert/information alignment, state capacity, and behavioral mechanisms.
-7. **Test 007: Strict Pre-Shock Trust Baseline**  
-   Re-estimates the main trust-topology models using only WVS Wave 7 countries whose fieldwork was completed no later than 2019.
-8. **Test 008: Post-Shock Trust Topology and Sphere of Fear Proxy**  
-   Tests pandemic-overlap trust observations, trust misalignment, and a measurable fear-topology proxy against mortality, vaccination, and behavioral contraction outcomes.
-
-The main empirical conclusion is deliberately cautious: the results do **not** prove AetherCore. They suggest that trust is not a simple universally positive variable. Trust topology matters. Centralized institutional and expert trust tend to behave differently from decentralized interpersonal or community trust, and trust gaps can mark vulnerability during institutional shocks.
