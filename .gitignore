@@ -1,4 +1,8 @@
+
+# AIFT generated runtime state
+# Downloaded public/raw research data; scripts document how to recreate these.
 # LaTeX build byproducts
+# Local LaTeX working directory
 *.aux
 *.bbl
 *.bcf
@@ -12,18 +16,26 @@
 *.log
 *.lot
 *.out
+*.pyc
 *.run.xml
 *.synctex.gz
 *.toc
 *.xdv
-
-# Local LaTeX working directory
-latex/build/
-tmp/
-__pycache__/
-*.pyc
+.aift/capabilities.json
+.aift/federation-snapshot.json
+.aift/providers.json
+.aift/repos.json
+.aift/workflows.json
 .venv/
-venv/
-
-# Downloaded public/raw research data; scripts document how to recreate these.
+__pycache__/
+latex/build/
+registry/*.cypher
+registry/*.dot
+registry/*.graphml
+registry/*.json
+registry/*.rdf
+reports/
 research/aethercore-test-001/data_raw/
+tmp/
+var/events/
+venv/
