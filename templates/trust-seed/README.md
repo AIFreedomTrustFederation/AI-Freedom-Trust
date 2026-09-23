@@ -28,6 +28,8 @@ Instantiate a private-by-default local seed from this canonical template with:
 python scripts/create_trust_seed.py
 ```
 
+The bootstrap creates a local draft without resolving identity, governance, publication, or other human decisions for the steward.
+
 ## First Setup Questions
 
 1. What is the trust name?
