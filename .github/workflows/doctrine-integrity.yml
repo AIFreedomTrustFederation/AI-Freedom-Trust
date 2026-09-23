@@ -28,40 +28,10 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Validate federation manifest
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path, PurePosixPath
-
-          root = Path.cwd().resolve()
-          manifest_path = root / "manifests/federation.manifest.json"
-          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-
-          assert manifest["kind"] == "federation-manifest"
-          assert manifest["trustSeedPattern"]["localFirst"] is True
-          assert manifest["trustSeedPattern"]["federationOptional"] is True
-          assert manifest["trustSeedPattern"]["privacyDefault"] == "local-private"
-
-          declared = {
-              **manifest["canonicalDocuments"],
-              "trustSeedPattern": manifest["trustSeedPattern"]["templatePath"],
-          }
-          for label, raw_path in declared.items():
-              path = PurePosixPath(raw_path)
-              assert not path.is_absolute() and ".." not in path.parts, (
-                  f"{label} escapes the repository: {raw_path}"
-              )
-              target = root.joinpath(*path.parts)
-              assert target.exists(), f"{label} is missing: {raw_path}"
-
-          print(f"Validated {len(declared)} declared doctrine paths")
-          PY
-
-      - name: Compile research scripts
+      - name: Run doctrine validation
         env:
           PYTHONPYCACHEPREFIX: /tmp/aift-python-cache
-        run: python -m compileall -q research/aethercore-test-001/scripts
+        run: python scripts/validate_doctrine.py
 
       - name: Confirm validation leaves checkout clean
         run: git diff --exit-code
