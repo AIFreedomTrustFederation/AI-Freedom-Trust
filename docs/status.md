@@ -23,7 +23,7 @@ Last local stewardship update: 2026-06-20.
 Checks appropriate for documentation and structure changes:
 
 - `git diff --check`
-- `python -m compileall research\aethercore-test-001\scripts`
+- `python scripts/validate_doctrine.py`
 
 Full empirical reproduction requires raw source datasets under `research/aethercore-test-001/data_raw/` and must follow `research/aethercore-test-001/ARTIFACT_POLICY.md`.
 

@@ -7,7 +7,7 @@ This document is the local validation source of truth for `AI-Freedom-Trust`.
 | Level | Scope | Commands |
 | --- | --- | --- |
 | Documentation check | Markdown, HTML, policy, status, review packet changes | `git diff --check` |
-| Python syntax check | Research script syntax without raw data | `python -m compileall research\aethercore-test-001\scripts` |
+| Doctrine validation | Manifest path checks plus research script syntax without raw data | `python scripts/validate_doctrine.py` |
 | Empirical rerun | Recompute processed data, outputs, figures, and reports | Run the relevant scripts in `research/aethercore-test-001\scripts` after installing `requirements.txt` |
 | PDF rebuild | Rebuild LaTeX PDFs | `.\scripts\build-latex.ps1` or `.\scripts\build-latex.ps1 -Document <name>` |
 
@@ -17,10 +17,10 @@ For docs/status/policy changes, run from the repository root:
 
 ```powershell
 git diff --check
-python -m compileall research\aethercore-test-001\scripts
+python scripts/validate_doctrine.py
 ```
 
-This does not prove the empirical outputs were regenerated. It only checks whitespace/syntax and preserves confidence that research scripts still parse.
+This does not prove the empirical outputs were regenerated. It checks manifest consistency, doctrine-path safety, and research script syntax so the documented local gate matches CI.
 
 ## Empirical reproduction
 

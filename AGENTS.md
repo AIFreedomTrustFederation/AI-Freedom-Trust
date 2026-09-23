@@ -79,7 +79,7 @@ Documentation-only changes should at minimum run:
 
 ```powershell
 git diff --check
-python -m compileall research\aethercore-test-001\scripts
+python scripts/validate_doctrine.py
 ```
 
 Research-result changes require the relevant script rerun and artifact review described in `research/aethercore-test-001/ARTIFACT_POLICY.md`.
