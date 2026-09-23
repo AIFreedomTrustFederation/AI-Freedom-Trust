@@ -29,8 +29,6 @@ jobs:
           python-version: "3.13"
 
       - name: Run doctrine validation
-        env:
-          PYTHONPYCACHEPREFIX: /tmp/aift-python-cache
         run: python scripts/validate_doctrine.py
 
       - name: Confirm validation leaves checkout clean
