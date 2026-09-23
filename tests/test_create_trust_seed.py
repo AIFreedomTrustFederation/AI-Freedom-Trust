@@ -56,6 +56,7 @@ class CreateTrustSeedTests(unittest.TestCase):
                 purpose="Steward the Harbor Commons local mission.",
                 primary_steward="Harbor steward circle",
                 location_precision="city-level",
+                federation_visibility="Shared with trusted circle",
             )
             create_trust_seed.create_trust_seed(
                 destination_two,
@@ -64,6 +65,7 @@ class CreateTrustSeedTests(unittest.TestCase):
                 purpose="Steward the Harbor Commons local mission.",
                 primary_steward="Harbor steward circle",
                 location_precision="city-level",
+                federation_visibility="Shared with trusted circle",
             )
 
             for file_name in create_trust_seed.REQUIRED_TEMPLATE_FILES:
@@ -72,6 +74,9 @@ class CreateTrustSeedTests(unittest.TestCase):
                     (destination_two / file_name).read_text(encoding="utf-8"),
                     file_name,
                 )
+
+            trust_text = (destination_one / "TRUST.md").read_text(encoding="utf-8")
+            self.assertIn("Selected level: `Shared with trusted circle`", trust_text)
 
     def test_rejects_non_empty_destination(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -83,6 +88,21 @@ class CreateTrustSeedTests(unittest.TestCase):
                 create_trust_seed.create_trust_seed(destination)
 
             self.assertIn("Destination already exists and is not empty", str(exc.exception))
+
+    def test_cleans_up_new_destination_on_failure(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            original_template_dir = create_trust_seed.TEMPLATE_DIR
+            broken_template = Path(tmpdir) / "broken-template"
+            broken_template.mkdir()
+            (broken_template / "README.md").write_text("broken\n", encoding="utf-8")
+            create_trust_seed.TEMPLATE_DIR = broken_template
+            self.addCleanup(setattr, create_trust_seed, "TEMPLATE_DIR", original_template_dir)
+
+            destination = Path(tmpdir) / "new-seed"
+            with self.assertRaises(SystemExit):
+                create_trust_seed.create_trust_seed(destination)
+
+            self.assertFalse(destination.exists())
 
 
 if __name__ == "__main__":

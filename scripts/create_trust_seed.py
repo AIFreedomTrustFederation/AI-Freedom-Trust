@@ -4,7 +4,7 @@ import argparse
 import json
 import re
 import shutil
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -75,7 +75,8 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def ensure_template_ready(template_dir: Path = TEMPLATE_DIR) -> None:
+def ensure_template_ready(template_dir: Path | None = None) -> None:
+    template_dir = TEMPLATE_DIR if template_dir is None else template_dir
     if not template_dir.is_dir():
         fail(f"Trust seed template is missing: {template_dir}")
     missing = [name for name in REQUIRED_TEMPLATE_FILES if not (template_dir / name).is_file()]
@@ -105,6 +106,31 @@ def load_manifest(path: Path) -> dict[str, object]:
     if not isinstance(manifest, dict):
         fail("Template LOCAL_MANIFEST.json must contain a JSON object")
     return manifest
+
+
+def validate_relative_file_path(seed_dir: Path, raw_path: object, label: str) -> None:
+    if not isinstance(raw_path, str) or not raw_path:
+        fail(f"{label} must be a non-empty string path")
+    if "\\" in raw_path or ":" in raw_path:
+        fail(f"{label} must use a relative POSIX path: {raw_path}")
+
+    path = PurePosixPath(raw_path)
+    if path.is_absolute() or ".." in path.parts or "." in path.parts or not path.parts:
+        fail(f"{label} escapes the generated trust seed: {raw_path}")
+
+    current = seed_dir.resolve()
+    for part in path.parts:
+        current = current / part
+        if current.is_symlink():
+            fail(f"{label} uses a symlinked path: {raw_path}")
+        if not current.exists():
+            fail(f"{label} is missing: {raw_path}")
+
+    resolved = current.resolve()
+    if not resolved.is_relative_to(seed_dir.resolve()):
+        fail(f"{label} escapes the generated trust seed: {raw_path}")
+    if not resolved.is_file():
+        fail(f"{label} must be a file: {raw_path}")
 
 
 def render_trust_document(
@@ -509,11 +535,11 @@ def validate_seed_directory(seed_dir: Path) -> None:
         fail("Generated trust seed manifest documents section must be a non-empty object")
 
     for relative_path in documents.values():
-        if not isinstance(relative_path, str) or not relative_path:
-            fail("Generated trust seed document paths must be non-empty strings")
-        document_path = seed_dir / relative_path
-        if not document_path.is_file():
-            fail(f"Generated trust seed document is missing: {relative_path}")
+        validate_relative_file_path(
+            seed_dir,
+            relative_path,
+            "Generated trust seed document path",
+        )
 
     for file_name in REQUIRED_TEMPLATE_FILES:
         generated_path = seed_dir / file_name
@@ -531,6 +557,7 @@ def create_trust_seed(
     purpose: str | None = None,
     primary_steward: str = "Primary local steward",
     location_precision: str = "private only",
+    federation_visibility: str = "Private local seed",
 ) -> Path:
     ensure_template_ready()
 
@@ -545,48 +572,54 @@ def create_trust_seed(
         else f"Steward the local trust seed for {trust_name}."
     )
 
+    destination_created = not resolved_destination.exists()
     ensure_destination_ready(resolved_destination)
 
-    for file_name in STATIC_FILES:
-        shutil.copy2(TEMPLATE_DIR / file_name, resolved_destination / file_name)
+    try:
+        for file_name in STATIC_FILES:
+            shutil.copy2(TEMPLATE_DIR / file_name, resolved_destination / file_name)
 
-    write_text(
-        resolved_destination / "TRUST.md",
-        render_trust_document(
-            trust_name,
-            selected_trust_types,
-            trust_purpose,
-            "Private local seed",
-        ),
-    )
-    write_text(
-        resolved_destination / "TREE_OF_LIFE.md",
-        render_tree_of_life_document(trust_name, trust_purpose),
-    )
-    write_text(
-        resolved_destination / "GOVERNANCE.md",
-        render_governance_document(primary_steward),
-    )
-    write_text(
-        resolved_destination / "MAP.md",
-        render_map_document(location_precision),
-    )
+        write_text(
+            resolved_destination / "TRUST.md",
+            render_trust_document(
+                trust_name,
+                selected_trust_types,
+                trust_purpose,
+                federation_visibility,
+            ),
+        )
+        write_text(
+            resolved_destination / "TREE_OF_LIFE.md",
+            render_tree_of_life_document(trust_name, trust_purpose),
+        )
+        write_text(
+            resolved_destination / "GOVERNANCE.md",
+            render_governance_document(primary_steward),
+        )
+        write_text(
+            resolved_destination / "MAP.md",
+            render_map_document(location_precision),
+        )
 
-    template_manifest = load_manifest(TEMPLATE_DIR / "LOCAL_MANIFEST.json")
-    manifest = build_local_manifest(
-        template_manifest,
-        name=trust_name,
-        trust_types=selected_trust_types,
-        purpose=trust_purpose,
-        location_precision=location_precision,
-    )
-    (resolved_destination / "LOCAL_MANIFEST.json").write_text(
-        json.dumps(manifest, indent=2) + "\n",
-        encoding="utf-8",
-    )
+        template_manifest = load_manifest(TEMPLATE_DIR / "LOCAL_MANIFEST.json")
+        manifest = build_local_manifest(
+            template_manifest,
+            name=trust_name,
+            trust_types=selected_trust_types,
+            purpose=trust_purpose,
+            location_precision=location_precision,
+        )
+        (resolved_destination / "LOCAL_MANIFEST.json").write_text(
+            json.dumps(manifest, indent=2) + "\n",
+            encoding="utf-8",
+        )
 
-    validate_seed_directory(resolved_destination)
-    return resolved_destination
+        validate_seed_directory(resolved_destination)
+        return resolved_destination
+    except BaseException:
+        if destination_created:
+            shutil.rmtree(resolved_destination, ignore_errors=True)
+        raise
 
 
 def main() -> None:
@@ -598,6 +631,7 @@ def main() -> None:
         purpose=args.purpose,
         primary_steward=args.primary_steward,
         location_precision=args.location_precision,
+        federation_visibility=args.federation_visibility,
     )
     print(f"Created trust seed at {destination}")
 
