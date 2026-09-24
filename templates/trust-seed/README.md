@@ -20,6 +20,16 @@ This seed should be usable as a local folder, a Git repository, a Mobox workspac
 
 Private data stays local by default. Federation is voluntary and permissioned.
 
+## Local Bootstrap
+
+Instantiate a private-by-default local seed from this canonical template with:
+
+```bash
+python scripts/create_trust_seed.py
+```
+
+The bootstrap creates a local draft without resolving identity, governance, publication, or other human decisions for the steward.
+
 ## First Setup Questions
 
 1. What is the trust name?
