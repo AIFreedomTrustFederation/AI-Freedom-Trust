@@ -83,6 +83,16 @@ The Federation should eventually support user-controlled keys, credentials, atte
 
 Until formal identity infrastructure is implemented, Markdown documents and manifests should clearly distinguish local identity claims from verified credentials.
 
+The current local trust-seed milestone is intentionally narrow:
+
+- a trust seed may generate a local-only Ed25519 signing identity;
+- the private key remains local in `.trust-seed-local/identity/private_key.pem`;
+- public verification material may be shared deliberately through `.trust-seed-local/identity/public_identity.json`;
+- the trust seed may sign a canonical local state summary and store non-secret provenance in `.trust-seed-local/provenance/trust-seed-provenance.json`;
+- verification works offline and does not require the private key.
+
+This milestone is not yet federation identity, recovery, multi-device synchronization, public credentials, or remote trust establishment.
+
 ## Reputation
 
 Reputation should come from transparent contribution, not status games.
