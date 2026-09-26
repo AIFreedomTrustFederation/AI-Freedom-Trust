@@ -8,6 +8,7 @@ This document is the local validation source of truth for `AI-Freedom-Trust`.
 | --- | --- | --- |
 | Documentation check | Markdown, HTML, policy, status, review packet changes | `git diff --check` |
 | Doctrine validation | Manifest path checks plus research script syntax without raw data | `python scripts/validate_doctrine.py` |
+| Unit tests | Trust-seed generation and doctrine-validator behavior | `python -m unittest discover -s tests -v` |
 | Empirical rerun | Recompute processed data, outputs, figures, and reports | Run the relevant scripts in `research/aethercore-test-001\scripts` after installing `requirements.txt` |
 | PDF rebuild | Rebuild LaTeX PDFs | `.\scripts\build-latex.ps1` or `.\scripts\build-latex.ps1 -Document <name>` |
 
@@ -18,9 +19,11 @@ For docs/status/policy changes, run from the repository root:
 ```powershell
 git diff --check
 python scripts/validate_doctrine.py
+$env:PYTHONDONTWRITEBYTECODE = "1"
+python -m unittest discover -s tests -v
 ```
 
-This does not prove the empirical outputs were regenerated. It checks manifest consistency, doctrine-path safety, and research script syntax so the documented local gate matches CI.
+This does not prove the empirical outputs were regenerated. It checks manifest consistency, doctrine-path safety, research script syntax, deterministic trust-seed behavior, offline operation, and unsafe-path rejection so the documented local gate matches CI. Disabling bytecode generation keeps validation from creating untracked files in the checkout.
 
 ## Empirical reproduction
 
