@@ -80,6 +80,8 @@ Documentation-only changes should at minimum run:
 ```powershell
 git diff --check
 python scripts/validate_doctrine.py
+$env:PYTHONDONTWRITEBYTECODE = "1"
+python -m unittest discover -s tests -v
 ```
 
 Research-result changes require the relevant script rerun and artifact review described in `research/aethercore-test-001/ARTIFACT_POLICY.md`.
