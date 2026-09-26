@@ -31,5 +31,10 @@ jobs:
       - name: Run doctrine validation
         run: python scripts/validate_doctrine.py
 
+      - name: Run doctrine unit tests
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python -m unittest discover -s tests -v
+
       - name: Confirm validation leaves checkout clean
         run: git diff --exit-code
