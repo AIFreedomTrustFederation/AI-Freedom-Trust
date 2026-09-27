@@ -7,6 +7,15 @@ from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_PATH = ROOT / "manifests" / "federation.manifest.json"
 RESEARCH_SCRIPTS_PATH = ROOT / "research" / "aethercore-test-001" / "scripts"
+REQUIRED_CANONICAL_DOCUMENTS = frozenset(
+    {
+        "readme",
+        "agents",
+        "holographicTrustArchitecture",
+        "constitutionalHolographicTrustsChapter",
+        "trustSeedTemplate",
+    }
+)
 
 
 def fail(message: str) -> None:
@@ -73,6 +82,13 @@ def validate_manifest(
         manifest_object.get("canonicalDocuments"),
         "canonicalDocuments",
     )
+
+    missing_documents = REQUIRED_CANONICAL_DOCUMENTS - canonical_documents.keys()
+    if missing_documents:
+        fail(
+            "canonicalDocuments is missing required entries: "
+            + ", ".join(sorted(missing_documents))
+        )
 
     if manifest_object.get("kind") != "federation-manifest":
         fail("Manifest kind must be federation-manifest")

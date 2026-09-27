@@ -77,6 +77,24 @@ class ValidateDoctrineTests(unittest.TestCase):
 
         self.assertIn("readme is missing", self.exit_message(exc))
 
+    def test_rejects_missing_canonical_document_declaration(self) -> None:
+        tmpdir, root = self.make_fixture_repo()
+        self.addCleanup(tmpdir.cleanup)
+
+        manifest = json.loads(
+            (root / "manifests" / "federation.manifest.json").read_text(encoding="utf-8")
+        )
+        del manifest["canonicalDocuments"]["agents"]
+        manifest_path = self.write_manifest(root, manifest)
+
+        with self.assertRaises(SystemExit) as exc:
+            validate_doctrine.validate_manifest(root, manifest_path)
+
+        self.assertIn(
+            "canonicalDocuments is missing required entries: agents",
+            self.exit_message(exc),
+        )
+
     def test_rejects_absolute_manifest_path(self) -> None:
         tmpdir, root = self.make_fixture_repo()
         self.addCleanup(tmpdir.cleanup)
