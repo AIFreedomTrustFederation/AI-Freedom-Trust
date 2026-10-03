@@ -196,8 +196,8 @@ def validate_manifest_structure(
     shared_with_federation = privacy.get("sharedWithFederation")
     if not isinstance(shared_with_federation, list):
         fail("Generated trust seed privacy.sharedWithFederation must be a list")
-    if not all(isinstance(item, str) for item in shared_with_federation):
-        fail("Generated trust seed privacy.sharedWithFederation entries must be strings")
+    if shared_with_federation != []:
+        fail("Generated trust seed privacy.sharedWithFederation must default to an empty list")
 
     federation_link = manifest.get("federationLink")
     if not isinstance(federation_link, dict):

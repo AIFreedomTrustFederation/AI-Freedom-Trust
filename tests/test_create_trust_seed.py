@@ -288,6 +288,22 @@ class CreateTrustSeedTests(unittest.TestCase):
                 create_trust_seed.create_trust_seed(Path("seed"), working_root=root)
             self.assertIn("agentPolicy.aiStewardEnabled must be false", str(exc.exception))
 
+    def test_rejects_default_federation_sharing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            template = self.copy_template(root)
+            manifest = json.loads((template / "LOCAL_MANIFEST.json").read_text(encoding="utf-8"))
+            manifest["privacy"]["sharedWithFederation"] = ["profile"]
+            (template / "LOCAL_MANIFEST.json").write_text(json.dumps(manifest), encoding="utf-8")
+            self.use_template(template)
+
+            with self.assertRaises(SystemExit) as exc:
+                create_trust_seed.create_trust_seed(Path("seed"), working_root=root)
+            self.assertIn(
+                "privacy.sharedWithFederation must default to an empty list",
+                str(exc.exception),
+            )
+
     def test_cleans_up_after_permission_failure_without_leaving_seed(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
