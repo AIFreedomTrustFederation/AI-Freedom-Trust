@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import base64
 import json
 import os
 import shutil
@@ -168,6 +169,46 @@ class TrustSeedIdentityTests(unittest.TestCase):
                 trust_seed_identity.verify_seed(seed)
 
             self.assertIn("keyId does not match", str(exc.exception))
+
+    def test_rejects_wholesale_signer_substitution(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            seed = self.create_seed(Path(tmpdir))
+            trust_seed_identity.init_identity(seed)
+            trust_seed_identity.sign_seed(seed)
+
+            trust_path = seed / "TRUST.md"
+            trust_path.write_text(
+                trust_path.read_text(encoding="utf-8") + "\nAttacker-controlled content.\n",
+                encoding="utf-8",
+            )
+
+            attacker_key = trust_seed_identity.Ed25519PrivateKey.generate()
+            signed_state = trust_seed_identity.build_signed_state(seed)
+            canonical_bytes = trust_seed_identity.canonical_json_bytes(signed_state)
+            forged_provenance = {
+                "schema": trust_seed_identity.PROVENANCE_SCHEMA,
+                "kind": "trust-seed-provenance",
+                "version": "0.1.0",
+                "signedState": signed_state,
+                "contentDigest": {
+                    "algorithm": trust_seed_identity.CONTENT_DIGEST_ALGORITHM,
+                    "value": trust_seed_identity.sha256_hex(canonical_bytes),
+                },
+                "verification": trust_seed_identity.public_identity_record(
+                    attacker_key.public_key(),
+                ),
+                "signature": {
+                    "format": "base64",
+                    "value": base64.b64encode(attacker_key.sign(canonical_bytes)).decode("ascii"),
+                },
+            }
+            trust_seed_identity.provenance_path(seed).write_text(
+                json.dumps(forged_provenance, indent=2) + "\n",
+                encoding="utf-8",
+            )
+
+            with self.assertRaises(SystemExit):
+                trust_seed_identity.verify_seed(seed)
 
     def test_malformed_provenance_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
