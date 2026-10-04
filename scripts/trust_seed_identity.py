@@ -336,6 +336,23 @@ def load_public_key_from_record(record: dict[str, object]) -> Ed25519PublicKey:
         fail(f"Public identity public key is invalid: {exc}")
 
 
+def load_trusted_public_identity(seed_dir: Path) -> dict[str, object]:
+    path = validate_child_path(
+        seed_dir,
+        f"{LOCAL_STATE_DIR}/{IDENTITY_DIR}/{PUBLIC_IDENTITY_FILE}",
+        "Trusted public identity",
+    )
+    record = load_json_object(path, "Trusted public identity")
+    if record.get("schema") != PUBLIC_IDENTITY_SCHEMA:
+        fail("Trusted public identity schema is invalid")
+    if record.get("kind") != "trust-seed-public-identity":
+        fail("Trusted public identity kind is invalid")
+    if record.get("version") != "0.1.0":
+        fail("Trusted public identity version is invalid")
+    load_public_key_from_record(record)
+    return record
+
+
 def manifest_canonical_digest(seed_dir: Path) -> tuple[dict[str, object], str]:
     manifest_path = validate_child_path(seed_dir, "LOCAL_MANIFEST.json", "LOCAL_MANIFEST.json")
     manifest = load_json_object(manifest_path, "Trust seed LOCAL_MANIFEST.json")
@@ -533,7 +550,11 @@ def verify_seed(seed_dir: Path) -> dict[str, object]:
 
     verification = provenance["verification"]
     assert isinstance(verification, dict)
-    public_key = load_public_key_from_record(verification)
+    load_public_key_from_record(verification)
+    trusted_identity = load_trusted_public_identity(seed_dir)
+    if verification != trusted_identity:
+        fail("Trust seed provenance identity does not match the trusted public identity")
+    public_key = load_public_key_from_record(trusted_identity)
 
     signature = provenance["signature"]
     assert isinstance(signature, dict)
