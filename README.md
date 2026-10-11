@@ -74,6 +74,20 @@ Here, **Receive** means preserving source material and authorship before interpr
 
 Useful operating references include [repository health](docs/repo-health.md), [status](docs/status.md), [validation](docs/validation.md), [security and privacy](docs/security-and-privacy.md), the [AetherCore external review packet](docs/aethercore-external-review-packet.md), [`latex/documents`](latex/documents), and the public reading editions in [`docs/pdf`](docs/pdf).
 
+### Local trust-seed bootstrap and validation boundary
+
+The checked-in [`scripts/create_trust_seed.py`](scripts/create_trust_seed.py) creates a **private-by-default local draft**, not a verified public identity or an automatically federated node. From the repository root, use a new relative destination directory:
+
+```bash
+python scripts/create_trust_seed.py my-local-trust
+python scripts/validate_doctrine.py
+python -m unittest discover -s tests -v
+```
+
+The generator validates the canonical template's expected files and manifest fields, rejects symlinked or executable template entries and unsafe destination paths, refuses to overwrite an existing destination, and stages output before moving it into place. The generated manifest retains local-private defaults, disables public federation linking, and requires human approval for AI stewardship. The steward must review the resulting documents and explicitly authorize any later sharing or publication.
+
+**Cryptographic identity and provenance are not established by this bootstrap.** The current `IDENTITY.md` describes local claims and distinguishes them from verified credentials; the root `scripts/init_trust_identity.py`, `scripts/sign_trust_seed.py`, and `scripts/verify_trust_seed.py` are not present on the checked default branch. Do not infer that signing or signature verification is available from proposed changes or unmerged pull requests. For validation scope and empirical/PDF limitations, see [`docs/validation.md`](docs/validation.md).
+
 The repository's metadata uses a lightweight verification command because much of its truth is documentary. That does not reduce verification to `git status`; publication work also requires build and visual inspection at the artifact level whenever a rendered document is changed.
 
 ---
