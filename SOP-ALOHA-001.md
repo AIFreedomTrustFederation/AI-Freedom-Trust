@@ -65,3 +65,35 @@ Aetherion applies the covenant loop to value, identity, memory, contribution, cu
 ## The Return of the Word
 
 The Word returns when information survives action without losing its relation to truth. Intention becomes operation; operation becomes evidence; evidence becomes memory; memory becomes intelligible return. In that return, the human person is not displaced by the system but restored to the center of responsibility.
+
+
+## BookForge sevenfold council crosswalk (edition proposal)
+
+| Capacity (M) | Article (D) | Movement (P) | Examination (P) |
+|---|---|---|---|
+| Root / red | I | Ground | Is it grounded? |
+| Sacral / orange | II | Witness | Is it generative? |
+| Solar plexus / yellow | III | Name | Is it proportionate? |
+| Heart / green | IV | Differentiate | Is it compassionate? |
+| Throat / blue | V | Converge | Is it truthful? |
+| Third eye / indigo | VI | Covenant | Is it discerning? |
+| Crown / violet | VII | Return | To what unity does it return? |
+
+These symbolic correspondences are mnemonic, not scientific measurements. **Article VIII: Dissent is sacred:** objections must be heard and preserved without retaliation; the established authority and applicable consent requirements still control.
+
+### Decision rules and records
+Use consensus for voluntary full agreement, consent-based decisions for reversible experiments after reasoned objections are addressed, supermajorities only with a documented quorum and threshold, and trustee decisions where fiduciary authority is legally reserved. For 30/90/180 minute sessions, allocate Ground/Witness/Name/Differentiate/Converge/Covenant/Return as 3/5/4/6/5/4/3, 10/15/10/20/15/12/8, or 20/30/20/40/30/24/16 minutes respectively. Never rush required consultation.
+
+**Decision Record:** ID ___; authority ___; affected people ___; options ___; decision rule ___; objections ___; owner ___; safeguards ___; return date ___; remedy ___.
+
+**Claim Register:** ID ___; D/M/H/P ___; source ___; uncertainty ___; reviewer ___; status ___.
+
+**Conflict Disclosure:** person ___; interest ___; mitigation or recusal ___; decision authority ___.
+
+**Return Review:** decision ID ___; measured outcomes ___; affected-person testimony ___; harms ___; remedy ___; next review ___.
+
+**Stop → standing → resume:** pause for missing authority, consent, professional review, cultural authorization, or a feasible remedy; the recorder preserves the issue; the convener refers it to the responsible trustee, qualified reviewer, or affected community; the council resumes only after documented resolution. Track commitment completion, objections, reported harms, response time, and remedy accessibility at 30 and 90 days.
+
+**Example:** A hypothetical council selects redacted public meeting summaries instead of full publication after hearing privacy objections. The recorder prepares the summary, a privacy reviewer approves it, and the council accepts correction requests at its 30-day Return. This is an example, not an enacted decision.
+
+**Record principle:** The record is irreversible; the remedy is not. Corrections are linked, decisions remain appealable, and sensitive data receive lawful access and deletion controls.
