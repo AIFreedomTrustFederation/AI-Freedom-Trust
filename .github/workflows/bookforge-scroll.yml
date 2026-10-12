@@ -1,0 +1,32 @@
+name: BookForge Scroll PDF
+on:
+  pull_request:
+    paths:
+      - 'latex/**'
+      - '.github/workflows/bookforge-scroll.yml'
+  workflow_dispatch:
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XeLaTeX toolchain
+        run: sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-fonts-recommended fonts-texgyre
+      - name: Compile BookForge edition twice
+        working-directory: latex/documents
+        run: |
+          set -euo pipefail
+          xelatex -interaction=nonstopmode -halt-on-error -file-line-error one-eternal-scroll-of-aloha.tex
+          xelatex -interaction=nonstopmode -halt-on-error -file-line-error one-eternal-scroll-of-aloha.tex
+          test -s one-eternal-scroll-of-aloha.pdf
+      - name: Upload PDF and build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bookforge-scroll-preview
+          path: |
+            latex/documents/one-eternal-scroll-of-aloha.pdf
+            latex/documents/one-eternal-scroll-of-aloha.log
+          if-no-files-found: warn
