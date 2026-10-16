@@ -88,7 +88,7 @@ The generator validates the canonical template's expected files and manifest fie
 
 **Cryptographic identity and provenance are not established by this bootstrap.** The current `IDENTITY.md` describes local claims and distinguishes them from verified credentials; the root `scripts/init_trust_identity.py`, `scripts/sign_trust_seed.py`, and `scripts/verify_trust_seed.py` are not present on the checked default branch. Do not infer that signing or signature verification is available from proposed changes or unmerged pull requests. For validation scope and empirical/PDF limitations, see [`docs/validation.md`](docs/validation.md).
 
-The repository's metadata uses a lightweight verification command because much of its truth is documentary. That does not reduce verification to `git status`; publication work also requires build and visual inspection at the artifact level whenever a rendered document is changed.
+The federation manifest's `verify` command runs `python3 -B scripts/validate_doctrine.py && python3 -B -m unittest discover -s tests -v` from the repository root. It validates declared doctrine paths, checks research-script syntax, and executes the Python unit tests; failures propagate as nonzero exit codes. Python 3.9+ is required. This does **not** rebuild PDFs, rerun empirical analyses, check external links, or visually inspect rendered editions. Publication work still requires those additional checks when relevant.
 
 ---
 

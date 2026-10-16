@@ -40,11 +40,13 @@ Pull:
 git pull --ff-only
 ```
 
-Verify:
+Verify (from the repository root; Python 3.9+):
 
 ```bash
-git status --short
+python3 -B scripts/validate_doctrine.py && python3 -B -m unittest discover -s tests -v
 ```
+
+This runs the doctrine manifest/path and research-script syntax checks, then the Python unit tests. A failing check returns a nonzero status. It does not rebuild PDFs or rerun empirical research.
 
 ## Federation Metadata
 
