@@ -98,6 +98,12 @@ The repository is organized so the reader can move from meaning to implementatio
 
 The major public works include the [One Eternal Scroll of ALO'ha](https://aifreedomtrustfederation.github.io/AI-Freedom-Trust/docs/pdf/one-eternal-scroll-of-aloha.pdf), [Aetherion Restorative Civilization Economy](docs/pdf/aetherion-restorative-civilization-economy.pdf), [Aetherion Flight Paper](docs/pdf/aetherion-flight-paper-post-quantum-sovereign-network.pdf), [Aetherion Genesis White Paper](docs/pdf/aetherion-genesis-whitepaper-alpha.pdf), [AetherCore empirical paper](docs/pdf/aethercore-empirical-trust-density-covid.pdf), and [AetherCore Volume I](docs/pdf/aethercore-white-paper-volume-i.pdf).
 
+### BookForge PDF preview and publication boundary
+
+The checked-in [BookForge Scroll PDF workflow](.github/workflows/bookforge-scroll.yml) runs on pull requests that change `latex/**` or the workflow itself, and on manual dispatch. It compiles [the Scroll LaTeX source](latex/documents/one-eternal-scroll-of-aloha.tex) twice with XeLaTeX and uploads a PDF and build log as a **workflow preview artifact**. This job does **not** promote the preview into [`docs/pdf/`](docs/pdf/), update the public reading edition, or verify that the linked [Scroll PDF](docs/pdf/one-eternal-scroll-of-aloha.pdf) matches the latest source. A successful build establishes compilation for that run, not editorial, visual, citation, or publication approval.
+
+For a controlled local publication, [the PowerShell LaTeX builder](scripts/build-latex.ps1) copies successfully generated PDFs into `docs/pdf/` after two XeLaTeX passes. The steward must review the rendered pages, verify the intended source revision and links, and explicitly commit the approved artifact; see the [validation guidance](docs/validation.md). Neither preview CI nor a tracked PDF alone establishes independent review or cryptographic publication provenance.
+
 ### The Return of the Word
 
 The Word returns whenever intelligence completes its journey without severing meaning from source. Intention becomes operation, operation becomes evidence, evidence becomes memory, and memory returns as something a human being can still understand, question, accept, or refuse. That return is the measure by which doctrine remains alive rather than becoming merely another layer of text.
