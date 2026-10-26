@@ -102,6 +102,8 @@ The major public works include the [One Eternal Scroll of ALO'ha](https://aifree
 
 The checked-in [BookForge Scroll PDF workflow](.github/workflows/bookforge-scroll.yml) runs on pull requests that change `latex/**` or the workflow itself, and on manual dispatch. It compiles [the Scroll LaTeX source](latex/documents/one-eternal-scroll-of-aloha.tex) twice with XeLaTeX and uploads a PDF and build log as a **workflow preview artifact**. This job does **not** promote the preview into [`docs/pdf/`](docs/pdf/), update the public reading edition, or verify that the linked [Scroll PDF](docs/pdf/one-eternal-scroll-of-aloha.pdf) matches the latest source. A successful build establishes compilation for that run, not editorial, visual, citation, or publication approval.
 
+The preview workflow references `actions/checkout@v4` and `actions/upload-artifact@v4` by mutable major-version tags and installs XeLaTeX packages without pinned package versions. Therefore a passing preview does not establish a byte-for-byte reproducible toolchain or independently attested artifact provenance. Record the workflow run, source commit SHA, and artifact checksum when comparing builds; these records support traceability but do not substitute for author approval.
+
 For a controlled local publication, [the PowerShell LaTeX builder](scripts/build-latex.ps1) copies successfully generated PDFs into `docs/pdf/` after two XeLaTeX passes. The steward must review the rendered pages, verify the intended source revision and links, and explicitly commit the approved artifact; see the [validation guidance](docs/validation.md). Neither preview CI nor a tracked PDF alone establishes independent review or cryptographic publication provenance.
 
 ### The Return of the Word
