@@ -74,6 +74,8 @@ Here, **Receive** means preserving source material and authorship before interpr
 
 Useful operating references include [repository health](docs/repo-health.md), [status](docs/status.md), [validation](docs/validation.md), [security and privacy](docs/security-and-privacy.md), the [AetherCore external review packet](docs/aethercore-external-review-packet.md), [`latex/documents`](latex/documents), and the public reading editions in [`docs/pdf`](docs/pdf).
 
+**Repository-health snapshot boundary.** The linked [`docs/repo-health.md`](docs/repo-health.md) was last reviewed on 2026-06-20. Its CI/build and deployment entries are dated observations, not live attestations of current Federation health. For present readiness, inspect commit-matched workflow results in each repository and verify deployed services independently; a successful workflow does not itself establish operational availability or governance authorization.
+
 ### Local trust-seed bootstrap and validation boundary
 
 The checked-in [`scripts/create_trust_seed.py`](scripts/create_trust_seed.py) creates a **private-by-default local draft**, not a verified public identity or an automatically federated node. From the repository root, use a new relative destination directory:
