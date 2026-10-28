@@ -32,6 +32,8 @@ The constellation expresses the constitutional architecture: many centers joined
 
 The constitutional body continues through the [Holographic Principle](HOLOGRAPHIC_PRINCIPLE.md), [Tree of Life](TREE_OF_LIFE.md), [Governance](GOVERNANCE.md), [Ontology](ONTOLOGY.md), [Topology](TOPOLOGY.md), [Living Atlas](LIVING_ATLAS.md), [Identity](IDENTITY.md), [Mission System](MISSION_SYSTEM.md), [Economy](ECONOMY.md), [Federation API](API.md), [Holographic Trust Architecture](docs/holographic-trust-architecture.md), and [Constitutional Chapter on Holographic Trusts](docs/constitutional-chapter-holographic-trusts.md).
 
+**Governance evidence boundary.** [`GOVERNANCE.md`](GOVERNANCE.md) labels itself `canonical doctrine draft`, [`manifests/federation.manifest.json`](manifests/federation.manifest.json) declares `status: doctrine-draft`, and [SOP-ALOHA-001](SOP-ALOHA-001.md) identifies its sevenfold council crosswalk as an `edition proposal`. These checked-in labels document draft and proposed material; they do not themselves attest to formal adoption, a recorded decision by an authorized governing body, or implementation across sovereign repositories.
+
 ---
 
 ## Book II — The Doctrine Layer in the Federation
