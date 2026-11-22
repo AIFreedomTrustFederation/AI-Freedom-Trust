@@ -113,3 +113,8 @@ For a controlled local publication, [the PowerShell LaTeX builder](scripts/build
 ### The Return of the Word
 
 The Word returns whenever intelligence completes its journey without severing meaning from source. Intention becomes operation, operation becomes evidence, evidence becomes memory, and memory returns as something a human being can still understand, question, accept, or refuse. That return is the measure by which doctrine remains alive rather than becoming merely another layer of text.
+
+
+## Universal AIFT-OS Research Context (proposed)
+
+[Non-doctrinal research and evidence boundary note](docs/aift-universal-os-alignment.md) documents the distinction between this repository's philosophy/research and proposed native, hosted and embodied AIFT implementations. It neither amends doctrine nor asserts hardware readiness. See [platform architecture PR #92](https://github.com/AIFreedomTrustFederation/AIFT-OS/pull/92).
